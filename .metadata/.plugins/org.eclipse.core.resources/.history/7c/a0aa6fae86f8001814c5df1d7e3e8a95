@@ -20,7 +20,7 @@ void RCC_configure(void) {
 void GPIO_configure(void) {
     GPIO_InitTypeDef GPIOx;
 
-    GPIOx.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIOx.GPIO_Mode = GPIO_Mode_IPD;
     GPIOx.GPIO_Pin  = (GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
     GPIOx.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_Init(GPIOC, &GPIOx);
@@ -30,7 +30,7 @@ void GPIO_configure(void) {
     GPIO_Init(GPIOE, &GPIOx);
 
 
-    GPIOx.GPIO_Mode = GPIO_Mode_IPD;
+    GPIOx.GPIO_Mode = GPIO_Mode_Out_PP;
     GPIOx.GPIO_Pin = (GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
     GPIO_Init(GPIOA, &GPIOx);
     GPIOx.GPIO_Pin = (GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9);
@@ -49,11 +49,9 @@ int main(void) {
 	RCC_configure();
 	GPIO_configure();
 	while(1) {
-		if((!GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_2)) || GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_6)) {
+		if((!GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_2)) || !GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_6)) {
 			GPIO_SetBits(GPIOD,GPIO_Pin_2);
-			for(i=1; i<=1000; i++);
-		}
-		else {
+			for(i=1; i<=1000000; i++);
 			GPIO_ResetBits(GPIOD,GPIO_Pin_2);
 		}
 	}

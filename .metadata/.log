@@ -2594,3 +2594,129 @@ Caused by: com.arm.rddi.RDDIException: No voltage detected on target.
 	at com.arm.rddi.RDDI$Debug.openConn(RDDI.java:231)
 	at com.arm.debug.dtsl.components.Device.openConn(Device.java:351)
 	... 22 more
+
+!ENTRY com.arm.debugger.ux 4 0 2018-12-05 21:10:25.157
+!MESSAGE Unable to connect to New_configuration. Unable to connect to USB:003895
+Unable to connect to device DAP
+No voltage detected on target.
+!STACK 0
+com.arm.debug.dtsl.DTSLException: Unable to connect to USB:003895
+	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:381)
+	at com.arm.debug.dtsl.impl.ConfigurationConnection.connect(ConfigurationConnection.java:50)
+	at com.arm.debugger.control.ConnectionController.doSetupDTSL(ConnectionController.java:663)
+	at com.arm.debugger.control.ConnectionController.doSetupDTSLIfRequired(ConnectionController.java:652)
+	at com.arm.debugger.control.ConnectionController.doInitialize(ConnectionController.java:535)
+	at com.arm.debugger.control.ConnectionController.manageThreadModelAndInitialize(ConnectionController.java:515)
+	at com.arm.debugger.control.ConnectionController.manageProgressResourceAndInitialize(ConnectionController.java:466)
+	at com.arm.debugger.control.ConnectionController.initialize(ConnectionController.java:417)
+	at com.arm.debugger.control.ConnectionManager.createConnection(ConnectionManager.java:344)
+	at com.arm.debugger.launcher.TargetLauncher.launch(TargetLauncher.java:20)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at com.arm.debugger.control.VariableResolvingLaunchConfiguration.launch(VariableResolvingLaunchConfiguration.java:275)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: com.arm.debug.dtsl.DTSLException: Unable to connect to device DAP
+	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:60)
+	at com.arm.debug.dtsl.components.CSDAP.connect(CSDAP.java:291)
+	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:873)
+	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:1)
+	at com.arm.debug.dtsl.components.SysControlRegisterWrapper.forEachDeviceOfCluster(SysControlRegisterWrapper.java:40)
+	at com.arm.debug.dtsl.configurations.ConfigurationBase.connectManagedDevices(ConfigurationBase.java:869)
+	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:368)
+	... 15 more
+Caused by: com.arm.debug.dtsl.nativelayer.NativeException: No voltage detected on target.
+	at com.arm.debug.dtsl.components.Device.openConn(Device.java:353)
+	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:55)
+	... 21 more
+Caused by: com.arm.rddi.RDDIException: No voltage detected on target.
+	at com.arm.rddi.RDDI.checkResult(RDDI.java:1616)
+	at com.arm.rddi.RDDI.access$1(RDDI.java:1603)
+	at com.arm.rddi.RDDI$Debug.openConn(RDDI.java:231)
+	at com.arm.debug.dtsl.components.Device.openConn(Device.java:351)
+	... 22 more
+
+!ENTRY com.arm.debugger.ux 4 0 2018-12-05 21:11:13.112
+!MESSAGE Unable to connect to New_configuration. Unable to connect to USB:003895
+Unable to connect to device DAP
+No voltage detected on target.
+!STACK 0
+com.arm.debug.dtsl.DTSLException: Unable to connect to USB:003895
+	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:381)
+	at com.arm.debug.dtsl.impl.ConfigurationConnection.connect(ConfigurationConnection.java:50)
+	at com.arm.debugger.control.ConnectionController.doSetupDTSL(ConnectionController.java:663)
+	at com.arm.debugger.control.ConnectionController.doSetupDTSLIfRequired(ConnectionController.java:652)
+	at com.arm.debugger.control.ConnectionController.doInitialize(ConnectionController.java:535)
+	at com.arm.debugger.control.ConnectionController.manageThreadModelAndInitialize(ConnectionController.java:515)
+	at com.arm.debugger.control.ConnectionController.manageProgressResourceAndInitialize(ConnectionController.java:466)
+	at com.arm.debugger.control.ConnectionController.initialize(ConnectionController.java:417)
+	at com.arm.debugger.control.ConnectionManager.createConnection(ConnectionManager.java:344)
+	at com.arm.debugger.launcher.TargetLauncher.launch(TargetLauncher.java:20)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at com.arm.debugger.control.VariableResolvingLaunchConfiguration.launch(VariableResolvingLaunchConfiguration.java:275)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: com.arm.debug.dtsl.DTSLException: Unable to connect to device DAP
+	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:60)
+	at com.arm.debug.dtsl.components.CSDAP.connect(CSDAP.java:291)
+	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:873)
+	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:1)
+	at com.arm.debug.dtsl.components.SysControlRegisterWrapper.forEachDeviceOfCluster(SysControlRegisterWrapper.java:40)
+	at com.arm.debug.dtsl.configurations.ConfigurationBase.connectManagedDevices(ConfigurationBase.java:869)
+	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:368)
+	... 15 more
+Caused by: com.arm.debug.dtsl.nativelayer.NativeException: No voltage detected on target.
+	at com.arm.debug.dtsl.components.Device.openConn(Device.java:353)
+	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:55)
+	... 21 more
+Caused by: com.arm.rddi.RDDIException: No voltage detected on target.
+	at com.arm.rddi.RDDI.checkResult(RDDI.java:1616)
+	at com.arm.rddi.RDDI.access$1(RDDI.java:1603)
+	at com.arm.rddi.RDDI$Debug.openConn(RDDI.java:231)
+	at com.arm.debug.dtsl.components.Device.openConn(Device.java:351)
+	... 22 more
+
+!ENTRY com.arm.debugger.ux 4 0 2018-12-05 21:18:00.578
+!MESSAGE Unable to connect to New_configuration. Unable to connect to USB:003895
+Unable to connect to device DAP
+No voltage detected on target.
+!STACK 0
+com.arm.debug.dtsl.DTSLException: Unable to connect to USB:003895
+	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:381)
+	at com.arm.debug.dtsl.impl.ConfigurationConnection.connect(ConfigurationConnection.java:50)
+	at com.arm.debugger.control.ConnectionController.doSetupDTSL(ConnectionController.java:663)
+	at com.arm.debugger.control.ConnectionController.doSetupDTSLIfRequired(ConnectionController.java:652)
+	at com.arm.debugger.control.ConnectionController.doInitialize(ConnectionController.java:535)
+	at com.arm.debugger.control.ConnectionController.manageThreadModelAndInitialize(ConnectionController.java:515)
+	at com.arm.debugger.control.ConnectionController.manageProgressResourceAndInitialize(ConnectionController.java:466)
+	at com.arm.debugger.control.ConnectionController.initialize(ConnectionController.java:417)
+	at com.arm.debugger.control.ConnectionManager.createConnection(ConnectionManager.java:344)
+	at com.arm.debugger.launcher.TargetLauncher.launch(TargetLauncher.java:20)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at com.arm.debugger.control.VariableResolvingLaunchConfiguration.launch(VariableResolvingLaunchConfiguration.java:275)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: com.arm.debug.dtsl.DTSLException: Unable to connect to device DAP
+	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:60)
+	at com.arm.debug.dtsl.components.CSDAP.connect(CSDAP.java:291)
+	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:873)
+	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:1)
+	at com.arm.debug.dtsl.components.SysControlRegisterWrapper.forEachDeviceOfCluster(SysControlRegisterWrapper.java:40)
+	at com.arm.debug.dtsl.configurations.ConfigurationBase.connectManagedDevices(ConfigurationBase.java:869)
+	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:368)
+	... 15 more
+Caused by: com.arm.debug.dtsl.nativelayer.NativeException: No voltage detected on target.
+	at com.arm.debug.dtsl.components.Device.openConn(Device.java:353)
+	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:55)
+	... 21 more
+Caused by: com.arm.rddi.RDDIException: No voltage detected on target.
+	at com.arm.rddi.RDDI.checkResult(RDDI.java:1616)
+	at com.arm.rddi.RDDI.access$1(RDDI.java:1603)
+	at com.arm.rddi.RDDI$Debug.openConn(RDDI.java:231)
+	at com.arm.debug.dtsl.components.Device.openConn(Device.java:351)
+	... 22 more

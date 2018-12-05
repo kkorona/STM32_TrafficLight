@@ -49,9 +49,9 @@ int main(void) {
 	RCC_configure();
 	GPIO_configure();
 	while(1) {
-		if((!GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_2)) || GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_6)) {
+		if((!GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_2)) || !GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_6)) {
 			GPIO_SetBits(GPIOD,GPIO_Pin_2);
-			for(i=1; i<=1000; i++);
+			for(i=1; i<=50000; i++);
 		}
 		else {
 			GPIO_ResetBits(GPIOD,GPIO_Pin_2);
