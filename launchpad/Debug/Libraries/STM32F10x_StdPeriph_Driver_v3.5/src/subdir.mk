@@ -4,7 +4,11 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/DFR0299.c \
+../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/HNSO02M.c \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/lcd.c \
+../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/led.c \
+../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/main.c \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/misc.c \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_adc.c \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_bkp.c \
@@ -19,6 +23,7 @@ C_SRCS += \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_fsmc.c \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_gpio.c \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_i2c.c \
+../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_it.c \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_iwdg.c \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_pwr.c \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_rcc.c \
@@ -31,7 +36,11 @@ C_SRCS += \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/touch.c 
 
 OBJS += \
+./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/DFR0299.o \
+./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/HNSO02M.o \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/lcd.o \
+./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/led.o \
+./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/main.o \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/misc.o \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_adc.o \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_bkp.o \
@@ -46,6 +55,7 @@ OBJS += \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_fsmc.o \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_gpio.o \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_i2c.o \
+./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_it.o \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_iwdg.o \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_pwr.o \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_rcc.o \
@@ -62,7 +72,7 @@ OBJS += \
 Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/%.o: ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM C Compiler 5'
-	armcc -I"C:\STM32_Launchpad\STM32_Launchpad\launchpad\Libraries\CMSIS\CoreSupport" -I"C:\STM32_Launchpad\STM32_Launchpad\launchpad\Libraries\CMSIS\DeviceSupport" -I"C:\STM32_Launchpad\STM32_Launchpad\launchpad\Libraries\CMSIS\DeviceSupport\Startup" -I"C:\STM32_Launchpad\STM32_Launchpad\launchpad\Libraries\STM32F10x_StdPeriph_Driver_v3.5\inc" -I"C:\STM32_Launchpad\STM32_Launchpad\launchpad\Libraries\STM32F10x_StdPeriph_Driver_v3.5\src" -O2 --cpu=cortex-m3 -g -c -o "$@" "$<"
+	armcc -I"C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\launchpad\Libraries\CMSIS\CoreSupport" -I"C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\launchpad\Libraries\CMSIS\DeviceSupport" -I"C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\launchpad\Libraries\CMSIS\DeviceSupport\Startup" -I"C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\launchpad\Libraries\STM32F10x_StdPeriph_Driver_v3.5\inc" -I"C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\launchpad\Libraries\STM32F10x_StdPeriph_Driver_v3.5\src" -O2 --cpu=cortex-m3 -g -c -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

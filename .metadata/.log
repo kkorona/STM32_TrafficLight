@@ -1,150 +1,13 @@
-!SESSION 2018-12-05 18:03:58.043 -----------------------------------------------
-eclipse.buildId=4.3.0.M20130911-1000
-java.version=1.7.0_45
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
-Framework arguments:  -product com.arm.ds.ide
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.arm.ds.ide
 
-!ENTRY com.arm.newsfeed 4 0 2018-12-05 18:04:20.092
-!MESSAGE Error when reading RSS feed "http://community.arm.com/view-browse-feed.jspa?containerType=700&userID=-1&browseSite=place-content&filterID=contentstatus[published]~objecttype~objecttype[blogpost]&browseViewID=placeContent&containerID=1060"
-!STACK 0
-java.net.UnknownHostException: community.arm.com
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:178)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:579)
-	at java.net.Socket.connect(Socket.java:528)
-	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
-	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
-	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
-	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
-	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
-	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
-	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:996)
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:932)
-	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:850)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1300)
-	at com.sun.syndication.io.XmlReader.<init>(XmlReader.java:174)
-	at com.sun.syndication.io.XmlReader.<init>(XmlReader.java:151)
-	at com.arm.newsfeed.rss.AggregatedFeed.fetch(AggregatedFeed.java:226)
-	at com.arm.newsfeed.rss.AggregatedFeed.access$3(AggregatedFeed.java:222)
-	at com.arm.newsfeed.rss.AggregatedFeed$3.run(AggregatedFeed.java:201)
-
-!ENTRY org.python.pydev.shared_core 1 1 2018-12-05 18:04:23.704
-!MESSAGE Restoring info for: C:\Program Files\DS-5\sw\eclipse\dropins\plugins\com.arm.tpip.jython_2.5.2.20140404_100548\lib\jython.jar
-!STACK 0
-java.lang.RuntimeException: Restoring info for: C:\Program Files\DS-5\sw\eclipse\dropins\plugins\com.arm.tpip.jython_2.5.2.20140404_100548\lib\jython.jar
-	at org.python.pydev.ui.interpreters.AbstractInterpreterManager.getInterpretersFromPersistedString(AbstractInterpreterManager.java:499)
-	at org.python.pydev.ui.interpreters.AbstractInterpreterManager.internalRecreateCacheGetInterpreterInfos(AbstractInterpreterManager.java:332)
-	at org.python.pydev.ui.interpreters.AbstractInterpreterManager.setInfos(AbstractInterpreterManager.java:622)
-	at com.arm.pydev.StartupListener.updateConfig(StartupListener.java:196)
-	at com.arm.pydev.StartupListener.access$0(StartupListener.java:97)
-	at com.arm.pydev.StartupListener$1.run(StartupListener.java:86)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.jface.window.Window.runEventLoop(Window.java:826)
-	at org.eclipse.jface.window.Window.open(Window.java:802)
-	at org.eclipse.jface.dialogs.MessageDialog.open(MessageDialog.java:334)
-	at com.arm.eclipse.licensemanager.Activator$1.run(Activator.java:142)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: java.io.IOException: Expecting: C:\STM32_Launchpad\STM32_Launchpad\.metadata\.plugins\org.python.pydev\v1_eie67pvy1e2ajn9axbhy1xk20\modulesKeys to exist (and be a file).
-	at org.python.pydev.editor.codecompletion.revisited.ModulesManager.loadFromFile(ModulesManager.java:266)
-	at org.python.pydev.editor.codecompletion.revisited.SystemModulesManager.load(SystemModulesManager.java:360)
-	at org.python.pydev.ui.interpreters.AbstractInterpreterManager.getInterpretersFromPersistedString(AbstractInterpreterManager.java:497)
-	... 39 more
-
-!ENTRY org.python.pydev.shared_core 1 1 2018-12-05 18:04:23.907
-!MESSAGE Finished restoring information for: C:\Program Files\DS-5\sw\eclipse\dropins\plugins\com.arm.tpip.jython_2.5.2.20140404_100548\lib\jython.jar at: C:\STM32_Launchpad\STM32_Launchpad\.metadata\.plugins\org.python.pydev\v1_eie67pvy1e2ajn9axbhy1xk20
-!STACK 0
-java.lang.RuntimeException: Finished restoring information for: C:\Program Files\DS-5\sw\eclipse\dropins\plugins\com.arm.tpip.jython_2.5.2.20140404_100548\lib\jython.jar at: C:\STM32_Launchpad\STM32_Launchpad\.metadata\.plugins\org.python.pydev\v1_eie67pvy1e2ajn9axbhy1xk20
-	at org.python.pydev.core.log.Log.logInfo(Log.java:63)
-	at org.python.pydev.ui.interpreters.AbstractInterpreterManager.getInterpretersFromPersistedString(AbstractInterpreterManager.java:544)
-	at org.python.pydev.ui.interpreters.AbstractInterpreterManager.internalRecreateCacheGetInterpreterInfos(AbstractInterpreterManager.java:332)
-	at org.python.pydev.ui.interpreters.AbstractInterpreterManager.setInfos(AbstractInterpreterManager.java:622)
-	at com.arm.pydev.StartupListener.updateConfig(StartupListener.java:196)
-	at com.arm.pydev.StartupListener.access$0(StartupListener.java:97)
-	at com.arm.pydev.StartupListener$1.run(StartupListener.java:86)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.jface.window.Window.runEventLoop(Window.java:826)
-	at org.eclipse.jface.window.Window.open(Window.java:802)
-	at org.eclipse.jface.dialogs.MessageDialog.open(MessageDialog.java:334)
-	at com.arm.eclipse.licensemanager.Activator$1.run(Activator.java:142)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-
-!ENTRY org.python.pydev.shared_core 4 4 2018-12-05 18:04:24.063
-!MESSAGE Info: Rebuilding internal caches: C:\STM32_Launchpad\STM32_Launchpad\.metadata\.plugins\com.python.pydev.analysis\jython_v1_eie67pvy1e2ajn9axbhy1xk20\jython.pydevsysteminfo (Expected error to be provided and got no error!)
-
-!ENTRY org.eclipse.cdt.ui 2 0 2018-12-05 18:05:11.190
-!MESSAGE Default project not found in New C/C++ Project Wizard
-
-!ENTRY org.eclipse.cdt.core 1 0 2018-12-05 18:05:18.594
-!MESSAGE Indexed 'launchpad' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
-
-!ENTRY org.eclipse.jface 2 0 2018-12-05 18:06:30.874
+!ENTRY org.eclipse.jface 2 0 2018-12-12 18:11:19.077
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-05 18:06:30.874
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-12 18:11:19.077
 !MESSAGE A conflict occurred for ALT+CTRL+I:
 Binding(ALT+CTRL+I,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
 		Open an include browser on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3ca2ee68,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6ea09929,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -152,17 +15,17 @@ Binding(ALT+CTRL+I,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
 		Open an include browser on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3ca2ee68,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6ea09929,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-05 18:06:30.874
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-12 18:11:19.077
 !MESSAGE A conflict occurred for ALT+SHIFT+R:
 Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
 		Rename the selected element,
 		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6cd20cf1,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@71a78b7c,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -170,7 +33,7 @@ Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
 		Rename the selected element,
 		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6cd20cf1,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@71a78b7c,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -178,17 +41,17 @@ Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
 		Rename the selected element,
 		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@524fda07,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2eb6b42f,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-05 18:06:30.874
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-12 18:11:19.077
 !MESSAGE A conflict occurred for F3:
 Binding(F3,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
 		Open an editor on the selected element's declaration(s),
 		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@78732bc8,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5cef919e,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -196,7 +59,7 @@ Binding(F3,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
 		Open an editor on the selected element's declaration(s),
 		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@78732bc8,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5cef919e,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -204,17 +67,17 @@ Binding(F3,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.editor,Open Declaration,
 		Open an editor on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@513f953f,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@74414bbc,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-05 18:06:30.874
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-12 18:11:19.077
 !MESSAGE A conflict occurred for CTRL+SHIFT+T:
 Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
 		Open an element in an Editor,
 		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@255f84c5,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6ad35f44,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -222,7 +85,7 @@ Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
 		Open an element in an Editor,
 		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@255f84c5,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6ad35f44,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -230,17 +93,17 @@ Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
 		Open a type in a Java editor,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2205b4ae,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5b13a026,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-05 18:06:30.874
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-12 18:11:19.077
 !MESSAGE A conflict occurred for F4:
 Binding(F4,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
 		Open a type hierarchy on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@24991cf5,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@65774d80,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -248,7 +111,7 @@ Binding(F4,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
 		Open a type hierarchy on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@24991cf5,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@65774d80,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -256,17 +119,17 @@ Binding(F4,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy,Open Type Hierarchy,
 		Open a type hierarchy on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@403c2b98,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7b81428a,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-05 18:06:30.874
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-12 18:11:19.077
 !MESSAGE A conflict occurred for CTRL+G:
 Binding(CTRL+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
 		Search for declarations of the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2e52291a,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6337b15e,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -274,7 +137,7 @@ Binding(CTRL+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
 		Search for declarations of the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2e52291a,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6337b15e,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -282,17 +145,17 @@ Binding(CTRL+G,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,Declaration in Workspace,
 		Search for declarations of the selected element in the workspace,
 		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@140881b8,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5d5dc535,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-05 18:06:30.874
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-12 18:11:19.077
 !MESSAGE A conflict occurred for CTRL+SHIFT+G:
 Binding(CTRL+SHIFT+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
 		Search for references to the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3a7c614e,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@373e4a76,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -300,7 +163,7 @@ Binding(CTRL+SHIFT+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
 		Search for references to the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3a7c614e,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@373e4a76,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -308,17 +171,17 @@ Binding(CTRL+SHIFT+G,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,References in Workspace,
 		Search for references to the selected element in the workspace,
 		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3bd865e1,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5a8aa54f,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-05 18:06:30.874
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-12 18:11:19.077
 !MESSAGE A conflict occurred for ALT+CTRL+H:
 Binding(ALT+CTRL+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
 		Open the call hierarchy for the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7c08b578,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@446b13f9,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -326,7 +189,7 @@ Binding(ALT+CTRL+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
 		Open the call hierarchy for the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7c08b578,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@446b13f9,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -334,17 +197,17 @@ Binding(ALT+CTRL+H,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy,Open Call Hierarchy,
 		Open a call hierarchy on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1fc218e6,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@51ec6386,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-05 18:06:30.874
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-12 18:11:19.077
 !MESSAGE A conflict occurred for CTRL+SHIFT+H:
 Binding(CTRL+SHIFT+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
 		Open a type in the type hierarchy view,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7ff0b453,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@767a1c6e,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -352,7 +215,7 @@ Binding(CTRL+SHIFT+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
 		Open a type in the type hierarchy view,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7ff0b453,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@767a1c6e,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
@@ -360,12 +223,204 @@ Binding(CTRL+SHIFT+H,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
 		Open a type in the type hierarchy view,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@13cef6c4,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4ae0b686,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 18:38:54.129
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 18:16:10.372
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 18:22:45.549
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 18:30:03.773
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 18:36:05.846
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 18:47:18.924
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 18:53:33.303
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 18:59:10.162
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 19:04:24.745
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 19:09:37.707
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 19:17:16.950
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 19:31:31.862
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 19:37:27.782
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-12 19:47:32.339
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
@@ -461,7 +516,7 @@ Caused by: java.util.zip.ZipException: zip file is empty
 	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
 	... 83 more
 
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 18:38:54.332
+!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-12 19:47:32.542
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
@@ -561,7 +616,7 @@ Caused by: java.util.zip.ZipException: zip file is empty
 	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
 	... 87 more
 
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 18:38:54.332
+!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-12 19:47:32.542
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
@@ -656,7 +711,7 @@ Caused by: java.util.zip.ZipException: zip file is empty
 	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
 	... 82 more
 
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 18:38:54.347
+!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-12 19:47:32.558
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
@@ -755,7 +810,7 @@ Caused by: java.util.zip.ZipException: zip file is empty
 	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
 	... 86 more
 
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 18:38:54.347
+!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-12 19:47:32.558
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
@@ -849,1185 +904,7 @@ Caused by: java.util.zip.ZipException: zip file is empty
 	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
 	... 81 more
 
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 18:38:54.347
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:325)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:87)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:100)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:73)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:245)
-	at org.eclipse.osgi.baseadaptor.bundlefile.BundleFile.internalGetResourceURL(BundleFile.java:150)
-	at org.eclipse.osgi.baseadaptor.bundlefile.BundleFile.getResourceURL(BundleFile.java:146)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findResourceImpl(ClasspathManager.java:361)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalResourceImpl(ClasspathManager.java:310)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalResource(ClasspathManager.java:297)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalResource(DefaultClassLoader.java:208)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalResource(BundleLoader.java:820)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findResource(BundleLoader.java:624)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findResource(BundleLoader.java:577)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.getResource(DefaultClassLoader.java:143)
-	at java.lang.ClassLoader.getResourceAsStream(ClassLoader.java:1348)
-	at java.util.ResourceBundle$Control$1.run(ResourceBundle.java:2601)
-	at java.util.ResourceBundle$Control$1.run(ResourceBundle.java:2586)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2585)
-	at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1436)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1400)
-	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1296)
-	at java.util.ResourceBundle.getBundle(ResourceBundle.java:721)
-	at org.python.pydev.shared_interactive_console.InteractiveConsolePlugin.<init>(InteractiveConsolePlugin.java:43)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at java.lang.Class.newInstance(Class.java:374)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadBundleActivator(AbstractBundle.java:167)
-	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:679)
-	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478)
-	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493)
-	at java.lang.Class.getConstructor0(Class.java:2803)
-	at java.lang.Class.newInstance(Class.java:345)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:70)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:441)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:322)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:412)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:753)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:404)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: java.util.zip.ZipException: zip file is empty
-	at java.util.zip.ZipFile.open(Native Method)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:215)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:145)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:159)
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
-	... 85 more
-!SESSION 2018-12-05 18:57:06.874 -----------------------------------------------
-eclipse.buildId=4.3.0.M20130911-1000
-java.version=1.7.0_45
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
-Framework arguments:  -product com.arm.ds.ide
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.arm.ds.ide
-
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 18:57:31.906
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:325)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:87)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:100)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:73)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:245)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findClassImpl(ClasspathManager.java:548)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClassImpl(ClasspathManager.java:492)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:465)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2566)
-	at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1436)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1400)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1354)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1354)
-	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1296)
-	at java.util.ResourceBundle.getBundle(ResourceBundle.java:721)
-	at org.python.pydev.shared_interactive_console.InteractiveConsolePlugin.<init>(InteractiveConsolePlugin.java:43)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at java.lang.Class.newInstance(Class.java:374)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadBundleActivator(AbstractBundle.java:167)
-	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:679)
-	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478)
-	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493)
-	at java.lang.Class.getConstructor0(Class.java:2803)
-	at java.lang.Class.newInstance(Class.java:345)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:70)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:441)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:322)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:412)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:753)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:404)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: java.util.zip.ZipException: zip file is empty
-	at java.util.zip.ZipFile.open(Native Method)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:215)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:145)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:159)
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
-	... 83 more
-
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 18:57:32.109
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:325)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:87)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:100)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:73)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:245)
-	at org.eclipse.osgi.baseadaptor.bundlefile.BundleFile.internalGetResourceURL(BundleFile.java:150)
-	at org.eclipse.osgi.baseadaptor.bundlefile.BundleFile.getResourceURL(BundleFile.java:146)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findResourceImpl(ClasspathManager.java:361)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalResourceImpl(ClasspathManager.java:310)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalResource(ClasspathManager.java:297)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalResource(DefaultClassLoader.java:208)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalResource(BundleLoader.java:820)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findResource(BundleLoader.java:624)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findResource(BundleLoader.java:577)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.getResource(DefaultClassLoader.java:143)
-	at java.lang.ClassLoader.getResourceAsStream(ClassLoader.java:1348)
-	at java.util.ResourceBundle$Control$1.run(ResourceBundle.java:2601)
-	at java.util.ResourceBundle$Control$1.run(ResourceBundle.java:2586)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2585)
-	at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1436)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1400)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1354)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1354)
-	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1296)
-	at java.util.ResourceBundle.getBundle(ResourceBundle.java:721)
-	at org.python.pydev.shared_interactive_console.InteractiveConsolePlugin.<init>(InteractiveConsolePlugin.java:43)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at java.lang.Class.newInstance(Class.java:374)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadBundleActivator(AbstractBundle.java:167)
-	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:679)
-	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478)
-	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493)
-	at java.lang.Class.getConstructor0(Class.java:2803)
-	at java.lang.Class.newInstance(Class.java:345)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:70)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:441)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:322)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:412)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:753)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:404)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: java.util.zip.ZipException: zip file is empty
-	at java.util.zip.ZipFile.open(Native Method)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:215)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:145)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:159)
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
-	... 87 more
-
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 18:57:32.109
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:325)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:87)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:100)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:73)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:245)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findClassImpl(ClasspathManager.java:548)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClassImpl(ClasspathManager.java:492)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:465)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2566)
-	at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1436)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1400)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1354)
-	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1296)
-	at java.util.ResourceBundle.getBundle(ResourceBundle.java:721)
-	at org.python.pydev.shared_interactive_console.InteractiveConsolePlugin.<init>(InteractiveConsolePlugin.java:43)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at java.lang.Class.newInstance(Class.java:374)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadBundleActivator(AbstractBundle.java:167)
-	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:679)
-	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478)
-	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493)
-	at java.lang.Class.getConstructor0(Class.java:2803)
-	at java.lang.Class.newInstance(Class.java:345)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:70)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:441)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:322)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:412)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:753)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:404)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: java.util.zip.ZipException: zip file is empty
-	at java.util.zip.ZipFile.open(Native Method)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:215)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:145)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:159)
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
-	... 82 more
-
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 18:57:32.109
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:325)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:87)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:100)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:73)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:245)
-	at org.eclipse.osgi.baseadaptor.bundlefile.BundleFile.internalGetResourceURL(BundleFile.java:150)
-	at org.eclipse.osgi.baseadaptor.bundlefile.BundleFile.getResourceURL(BundleFile.java:146)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findResourceImpl(ClasspathManager.java:361)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalResourceImpl(ClasspathManager.java:310)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalResource(ClasspathManager.java:297)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalResource(DefaultClassLoader.java:208)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalResource(BundleLoader.java:820)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findResource(BundleLoader.java:624)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findResource(BundleLoader.java:577)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.getResource(DefaultClassLoader.java:143)
-	at java.lang.ClassLoader.getResourceAsStream(ClassLoader.java:1348)
-	at java.util.ResourceBundle$Control$1.run(ResourceBundle.java:2601)
-	at java.util.ResourceBundle$Control$1.run(ResourceBundle.java:2586)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2585)
-	at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1436)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1400)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1354)
-	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1296)
-	at java.util.ResourceBundle.getBundle(ResourceBundle.java:721)
-	at org.python.pydev.shared_interactive_console.InteractiveConsolePlugin.<init>(InteractiveConsolePlugin.java:43)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at java.lang.Class.newInstance(Class.java:374)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadBundleActivator(AbstractBundle.java:167)
-	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:679)
-	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478)
-	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493)
-	at java.lang.Class.getConstructor0(Class.java:2803)
-	at java.lang.Class.newInstance(Class.java:345)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:70)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:441)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:322)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:412)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:753)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:404)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: java.util.zip.ZipException: zip file is empty
-	at java.util.zip.ZipFile.open(Native Method)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:215)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:145)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:159)
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
-	... 86 more
-
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 18:57:32.109
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:325)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:87)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:100)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:73)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:245)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findClassImpl(ClasspathManager.java:548)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClassImpl(ClasspathManager.java:492)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:465)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2566)
-	at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1436)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1400)
-	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1296)
-	at java.util.ResourceBundle.getBundle(ResourceBundle.java:721)
-	at org.python.pydev.shared_interactive_console.InteractiveConsolePlugin.<init>(InteractiveConsolePlugin.java:43)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at java.lang.Class.newInstance(Class.java:374)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadBundleActivator(AbstractBundle.java:167)
-	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:679)
-	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478)
-	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493)
-	at java.lang.Class.getConstructor0(Class.java:2803)
-	at java.lang.Class.newInstance(Class.java:345)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:70)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:441)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:322)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:412)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:753)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:404)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: java.util.zip.ZipException: zip file is empty
-	at java.util.zip.ZipFile.open(Native Method)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:215)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:145)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:159)
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
-	... 81 more
-
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 18:57:32.109
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:325)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:87)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:100)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:73)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:245)
-	at org.eclipse.osgi.baseadaptor.bundlefile.BundleFile.internalGetResourceURL(BundleFile.java:150)
-	at org.eclipse.osgi.baseadaptor.bundlefile.BundleFile.getResourceURL(BundleFile.java:146)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findResourceImpl(ClasspathManager.java:361)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalResourceImpl(ClasspathManager.java:310)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalResource(ClasspathManager.java:297)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalResource(DefaultClassLoader.java:208)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalResource(BundleLoader.java:820)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findResource(BundleLoader.java:624)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findResource(BundleLoader.java:577)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.getResource(DefaultClassLoader.java:143)
-	at java.lang.ClassLoader.getResourceAsStream(ClassLoader.java:1348)
-	at java.util.ResourceBundle$Control$1.run(ResourceBundle.java:2601)
-	at java.util.ResourceBundle$Control$1.run(ResourceBundle.java:2586)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2585)
-	at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1436)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1400)
-	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1296)
-	at java.util.ResourceBundle.getBundle(ResourceBundle.java:721)
-	at org.python.pydev.shared_interactive_console.InteractiveConsolePlugin.<init>(InteractiveConsolePlugin.java:43)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at java.lang.Class.newInstance(Class.java:374)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadBundleActivator(AbstractBundle.java:167)
-	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:679)
-	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478)
-	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493)
-	at java.lang.Class.getConstructor0(Class.java:2803)
-	at java.lang.Class.newInstance(Class.java:345)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:70)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:441)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:322)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:412)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:753)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:404)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: java.util.zip.ZipException: zip file is empty
-	at java.util.zip.ZipFile.open(Native Method)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:215)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:145)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:159)
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
-	... 85 more
-!SESSION 2018-12-05 19:14:43.734 -----------------------------------------------
-eclipse.buildId=4.3.0.M20130911-1000
-java.version=1.7.0_45
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
-Framework arguments:  -product com.arm.ds.ide
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.arm.ds.ide
-
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 19:14:55.505
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:325)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:87)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:100)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:73)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:245)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findClassImpl(ClasspathManager.java:548)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClassImpl(ClasspathManager.java:492)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:465)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2566)
-	at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1436)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1400)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1354)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1354)
-	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1296)
-	at java.util.ResourceBundle.getBundle(ResourceBundle.java:721)
-	at org.python.pydev.shared_interactive_console.InteractiveConsolePlugin.<init>(InteractiveConsolePlugin.java:43)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at java.lang.Class.newInstance(Class.java:374)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadBundleActivator(AbstractBundle.java:167)
-	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:679)
-	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478)
-	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493)
-	at java.lang.Class.getConstructor0(Class.java:2803)
-	at java.lang.Class.newInstance(Class.java:345)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:70)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:441)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:322)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:412)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:753)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:404)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: java.util.zip.ZipException: zip file is empty
-	at java.util.zip.ZipFile.open(Native Method)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:215)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:145)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:159)
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
-	... 83 more
-
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 19:14:55.507
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:325)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:87)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:100)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:73)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:245)
-	at org.eclipse.osgi.baseadaptor.bundlefile.BundleFile.internalGetResourceURL(BundleFile.java:150)
-	at org.eclipse.osgi.baseadaptor.bundlefile.BundleFile.getResourceURL(BundleFile.java:146)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findResourceImpl(ClasspathManager.java:361)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalResourceImpl(ClasspathManager.java:310)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalResource(ClasspathManager.java:297)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalResource(DefaultClassLoader.java:208)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalResource(BundleLoader.java:820)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findResource(BundleLoader.java:624)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findResource(BundleLoader.java:577)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.getResource(DefaultClassLoader.java:143)
-	at java.lang.ClassLoader.getResourceAsStream(ClassLoader.java:1348)
-	at java.util.ResourceBundle$Control$1.run(ResourceBundle.java:2601)
-	at java.util.ResourceBundle$Control$1.run(ResourceBundle.java:2586)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2585)
-	at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1436)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1400)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1354)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1354)
-	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1296)
-	at java.util.ResourceBundle.getBundle(ResourceBundle.java:721)
-	at org.python.pydev.shared_interactive_console.InteractiveConsolePlugin.<init>(InteractiveConsolePlugin.java:43)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at java.lang.Class.newInstance(Class.java:374)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadBundleActivator(AbstractBundle.java:167)
-	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:679)
-	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478)
-	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493)
-	at java.lang.Class.getConstructor0(Class.java:2803)
-	at java.lang.Class.newInstance(Class.java:345)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:70)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:441)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:322)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:412)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:753)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:404)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: java.util.zip.ZipException: zip file is empty
-	at java.util.zip.ZipFile.open(Native Method)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:215)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:145)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:159)
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
-	... 87 more
-
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 19:14:55.510
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:325)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:87)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:100)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:73)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:245)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findClassImpl(ClasspathManager.java:548)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClassImpl(ClasspathManager.java:492)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:465)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2566)
-	at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1436)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1400)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1354)
-	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1296)
-	at java.util.ResourceBundle.getBundle(ResourceBundle.java:721)
-	at org.python.pydev.shared_interactive_console.InteractiveConsolePlugin.<init>(InteractiveConsolePlugin.java:43)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at java.lang.Class.newInstance(Class.java:374)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadBundleActivator(AbstractBundle.java:167)
-	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:679)
-	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478)
-	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493)
-	at java.lang.Class.getConstructor0(Class.java:2803)
-	at java.lang.Class.newInstance(Class.java:345)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:70)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:441)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:322)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:412)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:753)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:404)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: java.util.zip.ZipException: zip file is empty
-	at java.util.zip.ZipFile.open(Native Method)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:215)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:145)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:159)
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
-	... 82 more
-
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 19:14:55.512
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:325)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:87)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:100)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:73)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:245)
-	at org.eclipse.osgi.baseadaptor.bundlefile.BundleFile.internalGetResourceURL(BundleFile.java:150)
-	at org.eclipse.osgi.baseadaptor.bundlefile.BundleFile.getResourceURL(BundleFile.java:146)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findResourceImpl(ClasspathManager.java:361)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalResourceImpl(ClasspathManager.java:310)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalResource(ClasspathManager.java:297)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalResource(DefaultClassLoader.java:208)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalResource(BundleLoader.java:820)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findResource(BundleLoader.java:624)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findResource(BundleLoader.java:577)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.getResource(DefaultClassLoader.java:143)
-	at java.lang.ClassLoader.getResourceAsStream(ClassLoader.java:1348)
-	at java.util.ResourceBundle$Control$1.run(ResourceBundle.java:2601)
-	at java.util.ResourceBundle$Control$1.run(ResourceBundle.java:2586)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2585)
-	at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1436)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1400)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1354)
-	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1296)
-	at java.util.ResourceBundle.getBundle(ResourceBundle.java:721)
-	at org.python.pydev.shared_interactive_console.InteractiveConsolePlugin.<init>(InteractiveConsolePlugin.java:43)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at java.lang.Class.newInstance(Class.java:374)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadBundleActivator(AbstractBundle.java:167)
-	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:679)
-	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478)
-	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493)
-	at java.lang.Class.getConstructor0(Class.java:2803)
-	at java.lang.Class.newInstance(Class.java:345)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:70)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:441)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:322)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:412)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:753)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:404)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: java.util.zip.ZipException: zip file is empty
-	at java.util.zip.ZipFile.open(Native Method)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:215)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:145)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:159)
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
-	... 86 more
-
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 19:14:55.514
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:325)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:87)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:100)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:73)
-	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:245)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findClassImpl(ClasspathManager.java:548)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClassImpl(ClasspathManager.java:492)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:465)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:464)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.util.ResourceBundle$Control.newBundle(ResourceBundle.java:2566)
-	at java.util.ResourceBundle.loadBundle(ResourceBundle.java:1436)
-	at java.util.ResourceBundle.findBundle(ResourceBundle.java:1400)
-	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1296)
-	at java.util.ResourceBundle.getBundle(ResourceBundle.java:721)
-	at org.python.pydev.shared_interactive_console.InteractiveConsolePlugin.<init>(InteractiveConsolePlugin.java:43)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at java.lang.Class.newInstance(Class.java:374)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadBundleActivator(AbstractBundle.java:167)
-	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:679)
-	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
-	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:478)
-	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:109)
-	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
-	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
-	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
-	at java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.lang.Class.privateGetDeclaredConstructors(Class.java:2493)
-	at java.lang.Class.getConstructor0(Class.java:2803)
-	at java.lang.Class.newInstance(Class.java:345)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:70)
-	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:441)
-	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:322)
-	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:412)
-	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:753)
-	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:404)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: java.util.zip.ZipException: zip file is empty
-	at java.util.zip.ZipFile.open(Native Method)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:215)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:145)
-	at java.util.zip.ZipFile.<init>(ZipFile.java:159)
-	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
-	... 81 more
-
-!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-05 19:14:55.517
+!ENTRY org.python.pydev.shared_interactive_console 4 0 2018-12-12 19:47:32.558
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 java.util.zip.ZipException: Exception in opening zip file: C:\Program Files\DS-5\sw\eclipse\plugins\org.python.pydev.shared_interactive_console_2.8.2.2013090511\commons-logging-1.1.1.jar
@@ -2125,403 +1002,55 @@ Caused by: java.util.zip.ZipException: zip file is empty
 	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:312)
 	... 85 more
 
-!ENTRY com.arm.debugger.ux 4 0 2018-12-05 19:19:32.989
-!MESSAGE C:\STM32_Launchpad\STM32_Launchpad\launchpad\Debug\STM32_launchpad.axf (지정된 파일을 찾을 수 없습니다)
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 19:50:49.506
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
 !STACK 0
-com.arm.debug.core.interfaces.engine.DebugException: Flash programming failed
-	at com.arm.debug.interpreter.ds.commands.flash.FlashLoadCommand.execute(FlashLoadCommand.java:88)
-	at com.arm.debug.interpreter.ds.commands.flash.FlashLoadCommand.execute(FlashLoadCommand.java:1)
-	at com.arm.debug.interpreter.ds.commands.AbstractParentCommand.execute(AbstractParentCommand.java:41)
-	at com.arm.debug.interpreter.ds.commands.AbstractParentCommand.execute(AbstractParentCommand.java:1)
-	at com.arm.debug.interpreter.ds.DSInterpreter$3.run(DSInterpreter.java:388)
-	at com.arm.debug.interpreter.ds.DSInterpreter$3.run(DSInterpreter.java:1)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager$QueuedTask.run(ConnectionEventManager.java:99)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager.processTask(ConnectionEventManager.java:310)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager.access$8(ConnectionEventManager.java:308)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager$2.run(ConnectionEventManager.java:213)
-	at com.arm.debugger.control.CommandTask.fillInStackTrace(CommandTask.java:52)
-	at com.arm.debugger.control.ConnectionController.execute(ConnectionController.java:1225)
-	at com.arm.debugger.api.AbstractCommands.execute(AbstractCommands.java:116)
-	at com.arm.debugger.api.Commands.consoleCommand(Commands.java:180)
-	at com.arm.debugger.views.debugConsole.DebugConsolePage.commandIssued(DebugConsolePage.java:539)
-	at com.arm.debugger.views.debugConsole.DebugCommandLine.notifyListeners(DebugCommandLine.java:157)
-	at com.arm.debugger.views.debugConsole.DebugCommandLine.keyTraversed(DebugCommandLine.java:192)
-	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:265)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1057)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1081)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
-	at org.eclipse.swt.widgets.Control.traverse(Control.java:4107)
-	at org.eclipse.swt.widgets.Control.translateTraversal(Control.java:4089)
-	at org.eclipse.swt.widgets.Display.translateTraversal(Display.java:4795)
-	at org.eclipse.swt.widgets.Display.filterMessage(Display.java:1276)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3755)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: com.arm.debug.flashprogrammer.FlashProgrammerException: Cannot find file C:\STM32_Launchpad\STM32_Launchpad\launchpad\Debug\STM32_launchpad.axf
-	at com.arm.debug.flashprogrammer.ElfImageReader.<init>(ElfImageReader.java:52)
-	at com.arm.debug.flashprogrammer.ImageReaderFactory.getReader(ImageReaderFactory.java:38)
-	at com.arm.debug.flashprogrammer.FlashProgrammer.doProgram(FlashProgrammer.java:119)
-	at com.arm.debug.flashprogrammer.FlashProgrammer.program(FlashProgrammer.java:74)
-	at com.arm.debug.flashprogrammer.FlashProgrammer.program(FlashProgrammer.java:80)
-	at com.arm.debug.interpreter.ds.commands.flash.FlashLoadCommand.execute(FlashLoadCommand.java:81)
-	at com.arm.debug.interpreter.ds.commands.flash.FlashLoadCommand.execute(FlashLoadCommand.java:1)
-	at com.arm.debug.interpreter.ds.commands.AbstractParentCommand.execute(AbstractParentCommand.java:41)
-	at com.arm.debug.interpreter.ds.commands.AbstractParentCommand.execute(AbstractParentCommand.java:1)
-	at com.arm.debug.interpreter.ds.DSInterpreter$3.run(DSInterpreter.java:388)
-	at com.arm.debug.interpreter.ds.DSInterpreter$3.run(DSInterpreter.java:1)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager$QueuedTask.run(ConnectionEventManager.java:99)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager.processTask(ConnectionEventManager.java:310)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager.access$8(ConnectionEventManager.java:308)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager$2.run(ConnectionEventManager.java:213)
-Caused by: java.io.FileNotFoundException: C:\STM32_Launchpad\STM32_Launchpad\launchpad\Debug\STM32_launchpad.axf (지정된 파일을 찾을 수 없습니다)
-	at java.io.RandomAccessFile.open(Native Method)
-	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:241)
-	at com.arm.imagereaders.fileio.FileByteBuffer.getFile(FileByteBuffer.java:128)
-	at com.arm.imagereaders.fileio.FileByteBuffer.length(FileByteBuffer.java:34)
-	at com.arm.imagereaders.fileio.CachingByteBuffer.<init>(CachingByteBuffer.java:41)
-	at com.arm.imagereaders.elf.ElfFileReader.<init>(ElfFileReader.java:39)
-	at com.arm.debug.flashprogrammer.ElfImageReader.<init>(ElfImageReader.java:47)
-	... 14 more
-Asynchronously called from thread Worker-2
-	at com.arm.debug.service.SingleThreader.execute(SingleThreader.java:152)
-	at com.arm.debug.service.DebugServiceWrapper.invoke(DebugServiceWrapper.java:72)
-	at com.sun.proxy.$Proxy21.execute(Unknown Source)
-	at com.arm.debugger.api.commands.ConsoleCommand.execute(ConsoleCommand.java:39)
-	at com.arm.debugger.api.commands.ConsoleCommand.execute(ConsoleCommand.java:1)
-	at com.arm.debugger.api.AbstractDebugCommand.call(AbstractDebugCommand.java:40)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
-	at com.arm.debugger.control.CommandTask.run(CommandTask.java:44)
-	at com.arm.debugger.control.ConnectionController$5.run(ConnectionController.java:1361)
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.arm.debugger.ux 4 0 2018-12-05 19:19:37.051
-!MESSAGE C:\STM32_Launchpad\STM32_Launchpad\launchpad\Debug\STM32_launchpad.axf (지정된 파일을 찾을 수 없습니다)
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 20:03:45.449
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
 !STACK 0
-com.arm.debug.core.interfaces.engine.DebugException: Flash programming failed
-	at com.arm.debug.interpreter.ds.commands.flash.FlashLoadCommand.execute(FlashLoadCommand.java:88)
-	at com.arm.debug.interpreter.ds.commands.flash.FlashLoadCommand.execute(FlashLoadCommand.java:1)
-	at com.arm.debug.interpreter.ds.commands.AbstractParentCommand.execute(AbstractParentCommand.java:41)
-	at com.arm.debug.interpreter.ds.commands.AbstractParentCommand.execute(AbstractParentCommand.java:1)
-	at com.arm.debug.interpreter.ds.DSInterpreter$3.run(DSInterpreter.java:388)
-	at com.arm.debug.interpreter.ds.DSInterpreter$3.run(DSInterpreter.java:1)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager$QueuedTask.run(ConnectionEventManager.java:99)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager.processTask(ConnectionEventManager.java:310)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager.access$8(ConnectionEventManager.java:308)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager$2.run(ConnectionEventManager.java:213)
-	at com.arm.debugger.control.CommandTask.fillInStackTrace(CommandTask.java:52)
-	at com.arm.debugger.control.ConnectionController.execute(ConnectionController.java:1225)
-	at com.arm.debugger.api.AbstractCommands.execute(AbstractCommands.java:116)
-	at com.arm.debugger.api.Commands.consoleCommand(Commands.java:180)
-	at com.arm.debugger.views.debugConsole.DebugConsolePage.commandIssued(DebugConsolePage.java:539)
-	at com.arm.debugger.views.debugConsole.DebugCommandLine.notifyListeners(DebugCommandLine.java:157)
-	at com.arm.debugger.views.debugConsole.DebugCommandLine.keyTraversed(DebugCommandLine.java:192)
-	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:265)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1057)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1081)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
-	at org.eclipse.swt.widgets.Control.traverse(Control.java:4107)
-	at org.eclipse.swt.widgets.Control.translateTraversal(Control.java:4089)
-	at org.eclipse.swt.widgets.Display.translateTraversal(Display.java:4795)
-	at org.eclipse.swt.widgets.Display.filterMessage(Display.java:1276)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3755)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: com.arm.debug.flashprogrammer.FlashProgrammerException: Cannot find file C:\STM32_Launchpad\STM32_Launchpad\launchpad\Debug\STM32_launchpad.axf
-	at com.arm.debug.flashprogrammer.ElfImageReader.<init>(ElfImageReader.java:52)
-	at com.arm.debug.flashprogrammer.ImageReaderFactory.getReader(ImageReaderFactory.java:38)
-	at com.arm.debug.flashprogrammer.FlashProgrammer.doProgram(FlashProgrammer.java:119)
-	at com.arm.debug.flashprogrammer.FlashProgrammer.program(FlashProgrammer.java:74)
-	at com.arm.debug.flashprogrammer.FlashProgrammer.program(FlashProgrammer.java:80)
-	at com.arm.debug.interpreter.ds.commands.flash.FlashLoadCommand.execute(FlashLoadCommand.java:81)
-	at com.arm.debug.interpreter.ds.commands.flash.FlashLoadCommand.execute(FlashLoadCommand.java:1)
-	at com.arm.debug.interpreter.ds.commands.AbstractParentCommand.execute(AbstractParentCommand.java:41)
-	at com.arm.debug.interpreter.ds.commands.AbstractParentCommand.execute(AbstractParentCommand.java:1)
-	at com.arm.debug.interpreter.ds.DSInterpreter$3.run(DSInterpreter.java:388)
-	at com.arm.debug.interpreter.ds.DSInterpreter$3.run(DSInterpreter.java:1)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager$QueuedTask.run(ConnectionEventManager.java:99)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager.processTask(ConnectionEventManager.java:310)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager.access$8(ConnectionEventManager.java:308)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager$2.run(ConnectionEventManager.java:213)
-Caused by: java.io.FileNotFoundException: C:\STM32_Launchpad\STM32_Launchpad\launchpad\Debug\STM32_launchpad.axf (지정된 파일을 찾을 수 없습니다)
-	at java.io.RandomAccessFile.open(Native Method)
-	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:241)
-	at com.arm.imagereaders.fileio.FileByteBuffer.getFile(FileByteBuffer.java:128)
-	at com.arm.imagereaders.fileio.FileByteBuffer.length(FileByteBuffer.java:34)
-	at com.arm.imagereaders.fileio.CachingByteBuffer.<init>(CachingByteBuffer.java:41)
-	at com.arm.imagereaders.elf.ElfFileReader.<init>(ElfFileReader.java:39)
-	at com.arm.debug.flashprogrammer.ElfImageReader.<init>(ElfImageReader.java:47)
-	... 14 more
-Asynchronously called from thread Worker-2
-	at com.arm.debug.service.SingleThreader.execute(SingleThreader.java:152)
-	at com.arm.debug.service.DebugServiceWrapper.invoke(DebugServiceWrapper.java:72)
-	at com.sun.proxy.$Proxy21.execute(Unknown Source)
-	at com.arm.debugger.api.commands.ConsoleCommand.execute(ConsoleCommand.java:39)
-	at com.arm.debugger.api.commands.ConsoleCommand.execute(ConsoleCommand.java:1)
-	at com.arm.debugger.api.AbstractDebugCommand.call(AbstractDebugCommand.java:40)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
-	at com.arm.debugger.control.CommandTask.run(CommandTask.java:44)
-	at com.arm.debugger.control.ConnectionController$5.run(ConnectionController.java:1361)
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.arm.debugger.ux 4 0 2018-12-05 19:21:58.446
-!MESSAGE Unable to connect to New_configuration. Unable to connect to USB:003895
-Unable to connect to device DAP
-No voltage detected on target.
+!ENTRY org.eclipse.core.resources 4 568 2018-12-12 20:09:03.152
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
 !STACK 0
-com.arm.debug.dtsl.DTSLException: Unable to connect to USB:003895
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:381)
-	at com.arm.debug.dtsl.impl.ConfigurationConnection.connect(ConfigurationConnection.java:50)
-	at com.arm.debugger.control.ConnectionController.doSetupDTSL(ConnectionController.java:663)
-	at com.arm.debugger.control.ConnectionController.doSetupDTSLIfRequired(ConnectionController.java:652)
-	at com.arm.debugger.control.ConnectionController.doInitialize(ConnectionController.java:535)
-	at com.arm.debugger.control.ConnectionController.manageThreadModelAndInitialize(ConnectionController.java:515)
-	at com.arm.debugger.control.ConnectionController.manageProgressResourceAndInitialize(ConnectionController.java:466)
-	at com.arm.debugger.control.ConnectionController.initialize(ConnectionController.java:417)
-	at com.arm.debugger.control.ConnectionManager.createConnection(ConnectionManager.java:344)
-	at com.arm.debugger.launcher.TargetLauncher.launch(TargetLauncher.java:20)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
-	at com.arm.debugger.control.VariableResolvingLaunchConfiguration.launch(VariableResolvingLaunchConfiguration.java:275)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-Caused by: com.arm.debug.dtsl.DTSLException: Unable to connect to device DAP
-	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:60)
-	at com.arm.debug.dtsl.components.CSDAP.connect(CSDAP.java:291)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:873)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:1)
-	at com.arm.debug.dtsl.components.SysControlRegisterWrapper.forEachDeviceOfCluster(SysControlRegisterWrapper.java:40)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connectManagedDevices(ConfigurationBase.java:869)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:368)
-	... 15 more
-Caused by: com.arm.debug.dtsl.nativelayer.NativeException: No voltage detected on target.
-	at com.arm.debug.dtsl.components.Device.openConn(Device.java:353)
-	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:55)
-	... 21 more
-Caused by: com.arm.rddi.RDDIException: No voltage detected on target.
-	at com.arm.rddi.RDDI.checkResult(RDDI.java:1616)
-	at com.arm.rddi.RDDI.access$1(RDDI.java:1603)
-	at com.arm.rddi.RDDI$Debug.openConn(RDDI.java:231)
-	at com.arm.debug.dtsl.components.Device.openConn(Device.java:351)
-	... 22 more
-
-!ENTRY com.arm.debugger.ux 4 0 2018-12-05 19:22:18.708
-!MESSAGE C:\STM32_Launchpad\STM32_Launchpad\launchpad\Debug\STM32_launchpad.axf (지정된 파일을 찾을 수 없습니다)
-!STACK 0
-com.arm.debug.core.interfaces.engine.DebugException: Flash programming failed
-	at com.arm.debug.interpreter.ds.commands.flash.FlashLoadCommand.execute(FlashLoadCommand.java:88)
-	at com.arm.debug.interpreter.ds.commands.flash.FlashLoadCommand.execute(FlashLoadCommand.java:1)
-	at com.arm.debug.interpreter.ds.commands.AbstractParentCommand.execute(AbstractParentCommand.java:41)
-	at com.arm.debug.interpreter.ds.commands.AbstractParentCommand.execute(AbstractParentCommand.java:1)
-	at com.arm.debug.interpreter.ds.DSInterpreter$3.run(DSInterpreter.java:388)
-	at com.arm.debug.interpreter.ds.DSInterpreter$3.run(DSInterpreter.java:1)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager$QueuedTask.run(ConnectionEventManager.java:99)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager.processTask(ConnectionEventManager.java:310)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager.access$8(ConnectionEventManager.java:308)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager$2.run(ConnectionEventManager.java:213)
-	at com.arm.debugger.control.CommandTask.fillInStackTrace(CommandTask.java:52)
-	at com.arm.debugger.control.ConnectionController.execute(ConnectionController.java:1225)
-	at com.arm.debugger.api.AbstractCommands.execute(AbstractCommands.java:116)
-	at com.arm.debugger.api.Commands.consoleCommand(Commands.java:180)
-	at com.arm.debugger.views.debugConsole.DebugConsolePage.commandIssued(DebugConsolePage.java:539)
-	at com.arm.debugger.views.debugConsole.DebugCommandLine.notifyListeners(DebugCommandLine.java:157)
-	at com.arm.debugger.views.debugConsole.DebugCommandLine.keyTraversed(DebugCommandLine.java:192)
-	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:265)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1057)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1081)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
-	at org.eclipse.swt.widgets.Control.traverse(Control.java:4107)
-	at org.eclipse.swt.widgets.Control.translateTraversal(Control.java:4089)
-	at org.eclipse.swt.widgets.Display.translateTraversal(Display.java:4795)
-	at org.eclipse.swt.widgets.Display.filterMessage(Display.java:1276)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3755)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:138)
-	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:610)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
-	at com.arm.workbench.Hook.run(Hook.java:403)
-Caused by: com.arm.debug.flashprogrammer.FlashProgrammerException: Cannot find file C:\STM32_Launchpad\STM32_Launchpad\launchpad\Debug\STM32_launchpad.axf
-	at com.arm.debug.flashprogrammer.ElfImageReader.<init>(ElfImageReader.java:52)
-	at com.arm.debug.flashprogrammer.ImageReaderFactory.getReader(ImageReaderFactory.java:38)
-	at com.arm.debug.flashprogrammer.FlashProgrammer.doProgram(FlashProgrammer.java:119)
-	at com.arm.debug.flashprogrammer.FlashProgrammer.program(FlashProgrammer.java:74)
-	at com.arm.debug.flashprogrammer.FlashProgrammer.program(FlashProgrammer.java:80)
-	at com.arm.debug.interpreter.ds.commands.flash.FlashLoadCommand.execute(FlashLoadCommand.java:81)
-	at com.arm.debug.interpreter.ds.commands.flash.FlashLoadCommand.execute(FlashLoadCommand.java:1)
-	at com.arm.debug.interpreter.ds.commands.AbstractParentCommand.execute(AbstractParentCommand.java:41)
-	at com.arm.debug.interpreter.ds.commands.AbstractParentCommand.execute(AbstractParentCommand.java:1)
-	at com.arm.debug.interpreter.ds.DSInterpreter$3.run(DSInterpreter.java:388)
-	at com.arm.debug.interpreter.ds.DSInterpreter$3.run(DSInterpreter.java:1)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager$QueuedTask.run(ConnectionEventManager.java:99)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager.processTask(ConnectionEventManager.java:310)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager.access$8(ConnectionEventManager.java:308)
-	at com.arm.debug.core.engine.connection.ConnectionEventManager$2.run(ConnectionEventManager.java:213)
-Caused by: java.io.FileNotFoundException: C:\STM32_Launchpad\STM32_Launchpad\launchpad\Debug\STM32_launchpad.axf (지정된 파일을 찾을 수 없습니다)
-	at java.io.RandomAccessFile.open(Native Method)
-	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:241)
-	at com.arm.imagereaders.fileio.FileByteBuffer.getFile(FileByteBuffer.java:128)
-	at com.arm.imagereaders.fileio.FileByteBuffer.length(FileByteBuffer.java:34)
-	at com.arm.imagereaders.fileio.CachingByteBuffer.<init>(CachingByteBuffer.java:41)
-	at com.arm.imagereaders.elf.ElfFileReader.<init>(ElfFileReader.java:39)
-	at com.arm.debug.flashprogrammer.ElfImageReader.<init>(ElfImageReader.java:47)
-	... 14 more
-Asynchronously called from thread Worker-10
-	at com.arm.debug.service.SingleThreader.execute(SingleThreader.java:152)
-	at com.arm.debug.service.DebugServiceWrapper.invoke(DebugServiceWrapper.java:72)
-	at com.sun.proxy.$Proxy21.execute(Unknown Source)
-	at com.arm.debugger.api.commands.ConsoleCommand.execute(ConsoleCommand.java:39)
-	at com.arm.debugger.api.commands.ConsoleCommand.execute(ConsoleCommand.java:1)
-	at com.arm.debugger.api.AbstractDebugCommand.call(AbstractDebugCommand.java:40)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
-	at com.arm.debugger.control.CommandTask.run(CommandTask.java:44)
-	at com.arm.debugger.control.ConnectionController$5.run(ConnectionController.java:1361)
+java.io.FileNotFoundException: C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:142)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1709)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1792)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
 
-!ENTRY com.arm.debugger.ux 4 0 2018-12-05 19:24:22.758
-!MESSAGE Unable to connect to New_configuration. Unable to connect to USB:003895
-Unable to connect to device DAP
-No voltage detected on target.
-!STACK 0
-com.arm.debug.dtsl.DTSLException: Unable to connect to USB:003895
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:381)
-	at com.arm.debug.dtsl.impl.ConfigurationConnection.connect(ConfigurationConnection.java:50)
-	at com.arm.debugger.control.ConnectionController.doSetupDTSL(ConnectionController.java:663)
-	at com.arm.debugger.control.ConnectionController.doSetupDTSLIfRequired(ConnectionController.java:652)
-	at com.arm.debugger.control.ConnectionController.doInitialize(ConnectionController.java:535)
-	at com.arm.debugger.control.ConnectionController.manageThreadModelAndInitialize(ConnectionController.java:515)
-	at com.arm.debugger.control.ConnectionController.manageProgressResourceAndInitialize(ConnectionController.java:466)
-	at com.arm.debugger.control.ConnectionController.initialize(ConnectionController.java:417)
-	at com.arm.debugger.control.ConnectionManager.createConnection(ConnectionManager.java:344)
-	at com.arm.debugger.launcher.TargetLauncher.launch(TargetLauncher.java:20)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
-	at com.arm.debugger.control.VariableResolvingLaunchConfiguration.launch(VariableResolvingLaunchConfiguration.java:275)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-Caused by: com.arm.debug.dtsl.DTSLException: Unable to connect to device DAP
-	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:60)
-	at com.arm.debug.dtsl.components.CSDAP.connect(CSDAP.java:291)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:873)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:1)
-	at com.arm.debug.dtsl.components.SysControlRegisterWrapper.forEachDeviceOfCluster(SysControlRegisterWrapper.java:40)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connectManagedDevices(ConfigurationBase.java:869)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:368)
-	... 15 more
-Caused by: com.arm.debug.dtsl.nativelayer.NativeException: No voltage detected on target.
-	at com.arm.debug.dtsl.components.Device.openConn(Device.java:353)
-	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:55)
-	... 21 more
-Caused by: com.arm.rddi.RDDIException: No voltage detected on target.
-	at com.arm.rddi.RDDI.checkResult(RDDI.java:1616)
-	at com.arm.rddi.RDDI.access$1(RDDI.java:1603)
-	at com.arm.rddi.RDDI$Debug.openConn(RDDI.java:231)
-	at com.arm.debug.dtsl.components.Device.openConn(Device.java:351)
-	... 22 more
-
-!ENTRY com.arm.debugger.ux 4 0 2018-12-05 19:38:25.355
-!MESSAGE Unable to connect to New_configuration. Unable to connect to USB:003895
-Unable to connect to device DAP
-No voltage detected on target.
-!STACK 0
-com.arm.debug.dtsl.DTSLException: Unable to connect to USB:003895
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:381)
-	at com.arm.debug.dtsl.impl.ConfigurationConnection.connect(ConfigurationConnection.java:50)
-	at com.arm.debugger.control.ConnectionController.doSetupDTSL(ConnectionController.java:663)
-	at com.arm.debugger.control.ConnectionController.doSetupDTSLIfRequired(ConnectionController.java:652)
-	at com.arm.debugger.control.ConnectionController.doInitialize(ConnectionController.java:535)
-	at com.arm.debugger.control.ConnectionController.manageThreadModelAndInitialize(ConnectionController.java:515)
-	at com.arm.debugger.control.ConnectionController.manageProgressResourceAndInitialize(ConnectionController.java:466)
-	at com.arm.debugger.control.ConnectionController.initialize(ConnectionController.java:417)
-	at com.arm.debugger.control.ConnectionManager.createConnection(ConnectionManager.java:344)
-	at com.arm.debugger.launcher.TargetLauncher.launch(TargetLauncher.java:20)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
-	at com.arm.debugger.control.VariableResolvingLaunchConfiguration.launch(VariableResolvingLaunchConfiguration.java:275)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-Caused by: com.arm.debug.dtsl.DTSLException: Unable to connect to device DAP
-	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:60)
-	at com.arm.debug.dtsl.components.CSDAP.connect(CSDAP.java:291)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:873)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:1)
-	at com.arm.debug.dtsl.components.SysControlRegisterWrapper.forEachDeviceOfCluster(SysControlRegisterWrapper.java:40)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connectManagedDevices(ConfigurationBase.java:869)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:368)
-	... 15 more
-Caused by: com.arm.debug.dtsl.nativelayer.NativeException: No voltage detected on target.
-	at com.arm.debug.dtsl.components.Device.openConn(Device.java:353)
-	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:55)
-	... 21 more
-Caused by: com.arm.rddi.RDDIException: No voltage detected on target.
-	at com.arm.rddi.RDDI.checkResult(RDDI.java:1616)
-	at com.arm.rddi.RDDI.access$1(RDDI.java:1603)
-	at com.arm.rddi.RDDI$Debug.openConn(RDDI.java:231)
-	at com.arm.debug.dtsl.components.Device.openConn(Device.java:351)
-	... 22 more
-
-!ENTRY com.arm.newsfeed 4 0 2018-12-05 20:04:20.166
+!ENTRY com.arm.newsfeed 4 0 2018-12-12 20:10:51.825
 !MESSAGE Error when reading RSS feed "http://community.arm.com/view-browse-feed.jspa?containerType=700&userID=-1&browseSite=place-content&filterID=contentstatus[published]~objecttype~objecttype[blogpost]&browseViewID=placeContent&containerID=1060"
 !STACK 0
 com.sun.syndication.io.ParsingFeedException: Invalid XML: Error on line 1: 프롤로그에서는 콘텐츠가 허용되지 않습니다.
@@ -2552,171 +1081,3 @@ Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; 프롤
 	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
 	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:453)
 	... 6 more
-
-!ENTRY com.arm.debugger.ux 4 0 2018-12-05 20:10:56.629
-!MESSAGE Unable to connect to New_configuration. Unable to connect to USB:003895
-Unable to connect to device DAP
-No voltage detected on target.
-!STACK 0
-com.arm.debug.dtsl.DTSLException: Unable to connect to USB:003895
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:381)
-	at com.arm.debug.dtsl.impl.ConfigurationConnection.connect(ConfigurationConnection.java:50)
-	at com.arm.debugger.control.ConnectionController.doSetupDTSL(ConnectionController.java:663)
-	at com.arm.debugger.control.ConnectionController.doSetupDTSLIfRequired(ConnectionController.java:652)
-	at com.arm.debugger.control.ConnectionController.doInitialize(ConnectionController.java:535)
-	at com.arm.debugger.control.ConnectionController.manageThreadModelAndInitialize(ConnectionController.java:515)
-	at com.arm.debugger.control.ConnectionController.manageProgressResourceAndInitialize(ConnectionController.java:466)
-	at com.arm.debugger.control.ConnectionController.initialize(ConnectionController.java:417)
-	at com.arm.debugger.control.ConnectionManager.createConnection(ConnectionManager.java:344)
-	at com.arm.debugger.launcher.TargetLauncher.launch(TargetLauncher.java:20)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
-	at com.arm.debugger.control.VariableResolvingLaunchConfiguration.launch(VariableResolvingLaunchConfiguration.java:275)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-Caused by: com.arm.debug.dtsl.DTSLException: Unable to connect to device DAP
-	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:60)
-	at com.arm.debug.dtsl.components.CSDAP.connect(CSDAP.java:291)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:873)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:1)
-	at com.arm.debug.dtsl.components.SysControlRegisterWrapper.forEachDeviceOfCluster(SysControlRegisterWrapper.java:40)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connectManagedDevices(ConfigurationBase.java:869)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:368)
-	... 15 more
-Caused by: com.arm.debug.dtsl.nativelayer.NativeException: No voltage detected on target.
-	at com.arm.debug.dtsl.components.Device.openConn(Device.java:353)
-	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:55)
-	... 21 more
-Caused by: com.arm.rddi.RDDIException: No voltage detected on target.
-	at com.arm.rddi.RDDI.checkResult(RDDI.java:1616)
-	at com.arm.rddi.RDDI.access$1(RDDI.java:1603)
-	at com.arm.rddi.RDDI$Debug.openConn(RDDI.java:231)
-	at com.arm.debug.dtsl.components.Device.openConn(Device.java:351)
-	... 22 more
-
-!ENTRY com.arm.debugger.ux 4 0 2018-12-05 21:10:25.157
-!MESSAGE Unable to connect to New_configuration. Unable to connect to USB:003895
-Unable to connect to device DAP
-No voltage detected on target.
-!STACK 0
-com.arm.debug.dtsl.DTSLException: Unable to connect to USB:003895
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:381)
-	at com.arm.debug.dtsl.impl.ConfigurationConnection.connect(ConfigurationConnection.java:50)
-	at com.arm.debugger.control.ConnectionController.doSetupDTSL(ConnectionController.java:663)
-	at com.arm.debugger.control.ConnectionController.doSetupDTSLIfRequired(ConnectionController.java:652)
-	at com.arm.debugger.control.ConnectionController.doInitialize(ConnectionController.java:535)
-	at com.arm.debugger.control.ConnectionController.manageThreadModelAndInitialize(ConnectionController.java:515)
-	at com.arm.debugger.control.ConnectionController.manageProgressResourceAndInitialize(ConnectionController.java:466)
-	at com.arm.debugger.control.ConnectionController.initialize(ConnectionController.java:417)
-	at com.arm.debugger.control.ConnectionManager.createConnection(ConnectionManager.java:344)
-	at com.arm.debugger.launcher.TargetLauncher.launch(TargetLauncher.java:20)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
-	at com.arm.debugger.control.VariableResolvingLaunchConfiguration.launch(VariableResolvingLaunchConfiguration.java:275)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-Caused by: com.arm.debug.dtsl.DTSLException: Unable to connect to device DAP
-	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:60)
-	at com.arm.debug.dtsl.components.CSDAP.connect(CSDAP.java:291)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:873)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:1)
-	at com.arm.debug.dtsl.components.SysControlRegisterWrapper.forEachDeviceOfCluster(SysControlRegisterWrapper.java:40)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connectManagedDevices(ConfigurationBase.java:869)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:368)
-	... 15 more
-Caused by: com.arm.debug.dtsl.nativelayer.NativeException: No voltage detected on target.
-	at com.arm.debug.dtsl.components.Device.openConn(Device.java:353)
-	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:55)
-	... 21 more
-Caused by: com.arm.rddi.RDDIException: No voltage detected on target.
-	at com.arm.rddi.RDDI.checkResult(RDDI.java:1616)
-	at com.arm.rddi.RDDI.access$1(RDDI.java:1603)
-	at com.arm.rddi.RDDI$Debug.openConn(RDDI.java:231)
-	at com.arm.debug.dtsl.components.Device.openConn(Device.java:351)
-	... 22 more
-
-!ENTRY com.arm.debugger.ux 4 0 2018-12-05 21:11:13.112
-!MESSAGE Unable to connect to New_configuration. Unable to connect to USB:003895
-Unable to connect to device DAP
-No voltage detected on target.
-!STACK 0
-com.arm.debug.dtsl.DTSLException: Unable to connect to USB:003895
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:381)
-	at com.arm.debug.dtsl.impl.ConfigurationConnection.connect(ConfigurationConnection.java:50)
-	at com.arm.debugger.control.ConnectionController.doSetupDTSL(ConnectionController.java:663)
-	at com.arm.debugger.control.ConnectionController.doSetupDTSLIfRequired(ConnectionController.java:652)
-	at com.arm.debugger.control.ConnectionController.doInitialize(ConnectionController.java:535)
-	at com.arm.debugger.control.ConnectionController.manageThreadModelAndInitialize(ConnectionController.java:515)
-	at com.arm.debugger.control.ConnectionController.manageProgressResourceAndInitialize(ConnectionController.java:466)
-	at com.arm.debugger.control.ConnectionController.initialize(ConnectionController.java:417)
-	at com.arm.debugger.control.ConnectionManager.createConnection(ConnectionManager.java:344)
-	at com.arm.debugger.launcher.TargetLauncher.launch(TargetLauncher.java:20)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
-	at com.arm.debugger.control.VariableResolvingLaunchConfiguration.launch(VariableResolvingLaunchConfiguration.java:275)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-Caused by: com.arm.debug.dtsl.DTSLException: Unable to connect to device DAP
-	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:60)
-	at com.arm.debug.dtsl.components.CSDAP.connect(CSDAP.java:291)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:873)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:1)
-	at com.arm.debug.dtsl.components.SysControlRegisterWrapper.forEachDeviceOfCluster(SysControlRegisterWrapper.java:40)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connectManagedDevices(ConfigurationBase.java:869)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:368)
-	... 15 more
-Caused by: com.arm.debug.dtsl.nativelayer.NativeException: No voltage detected on target.
-	at com.arm.debug.dtsl.components.Device.openConn(Device.java:353)
-	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:55)
-	... 21 more
-Caused by: com.arm.rddi.RDDIException: No voltage detected on target.
-	at com.arm.rddi.RDDI.checkResult(RDDI.java:1616)
-	at com.arm.rddi.RDDI.access$1(RDDI.java:1603)
-	at com.arm.rddi.RDDI$Debug.openConn(RDDI.java:231)
-	at com.arm.debug.dtsl.components.Device.openConn(Device.java:351)
-	... 22 more
-
-!ENTRY com.arm.debugger.ux 4 0 2018-12-05 21:18:00.578
-!MESSAGE Unable to connect to New_configuration. Unable to connect to USB:003895
-Unable to connect to device DAP
-No voltage detected on target.
-!STACK 0
-com.arm.debug.dtsl.DTSLException: Unable to connect to USB:003895
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:381)
-	at com.arm.debug.dtsl.impl.ConfigurationConnection.connect(ConfigurationConnection.java:50)
-	at com.arm.debugger.control.ConnectionController.doSetupDTSL(ConnectionController.java:663)
-	at com.arm.debugger.control.ConnectionController.doSetupDTSLIfRequired(ConnectionController.java:652)
-	at com.arm.debugger.control.ConnectionController.doInitialize(ConnectionController.java:535)
-	at com.arm.debugger.control.ConnectionController.manageThreadModelAndInitialize(ConnectionController.java:515)
-	at com.arm.debugger.control.ConnectionController.manageProgressResourceAndInitialize(ConnectionController.java:466)
-	at com.arm.debugger.control.ConnectionController.initialize(ConnectionController.java:417)
-	at com.arm.debugger.control.ConnectionManager.createConnection(ConnectionManager.java:344)
-	at com.arm.debugger.launcher.TargetLauncher.launch(TargetLauncher.java:20)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
-	at com.arm.debugger.control.VariableResolvingLaunchConfiguration.launch(VariableResolvingLaunchConfiguration.java:275)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
-Caused by: com.arm.debug.dtsl.DTSLException: Unable to connect to device DAP
-	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:60)
-	at com.arm.debug.dtsl.components.CSDAP.connect(CSDAP.java:291)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:873)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase$2.call(ConfigurationBase.java:1)
-	at com.arm.debug.dtsl.components.SysControlRegisterWrapper.forEachDeviceOfCluster(SysControlRegisterWrapper.java:40)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connectManagedDevices(ConfigurationBase.java:869)
-	at com.arm.debug.dtsl.configurations.ConfigurationBase.connect(ConfigurationBase.java:368)
-	... 15 more
-Caused by: com.arm.debug.dtsl.nativelayer.NativeException: No voltage detected on target.
-	at com.arm.debug.dtsl.components.Device.openConn(Device.java:353)
-	at com.arm.debug.dtsl.components.ConnectableDevice.connect(ConnectableDevice.java:55)
-	... 21 more
-Caused by: com.arm.rddi.RDDIException: No voltage detected on target.
-	at com.arm.rddi.RDDI.checkResult(RDDI.java:1616)
-	at com.arm.rddi.RDDI.access$1(RDDI.java:1603)
-	at com.arm.rddi.RDDI$Debug.openConn(RDDI.java:231)
-	at com.arm.debug.dtsl.components.Device.openConn(Device.java:351)
-	... 22 more

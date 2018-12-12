@@ -12,6 +12,7 @@ RM := clean
 -include Libraries/CMSIS/DeviceSupport/Startup/subdir.mk
 -include Libraries/CMSIS/DeviceSupport/subdir.mk
 -include Libraries/CMSIS/CoreSupport/subdir.mk
+-include .metadata/.plugins/org.eclipse.cdt.make.core/subdir.mk
 -include subdir.mk
 -include objects.mk
 

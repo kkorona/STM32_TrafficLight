@@ -23,4 +23,5 @@ Libraries/STM32F10x_StdPeriph_Driver_v3.5/src \
 Libraries/CMSIS/DeviceSupport \
 Libraries/CMSIS/DeviceSupport/Startup \
 Libraries/CMSIS/CoreSupport \
+.metadata/.plugins/org.eclipse.cdt.make.core \
 
