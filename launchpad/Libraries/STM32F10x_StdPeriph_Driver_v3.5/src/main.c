@@ -318,7 +318,7 @@ void OhLoRa_Cmd(){
   case '0':
     if(!Emergency){
       LED_On(BlueLED);
-      DFPlayer_Cmd[3] = (char)0x03;
+      DFPlayer_Cmd[3] = (char)0x03; // specify tracking num
       DFPlayer_Cmd[4] = (char)0x00;
       DFPlayer_Cmd[5] = (char)0x00;
       DFPlayer_Cmd[6] = (char)0x01;

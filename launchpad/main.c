@@ -7,9 +7,7 @@
 
 #include "stm32f10x_rcc.h"
 #include "stm32f10x_gpio.h"
-#include "stm32f10x_adc.h"
-#include "stm32f10x_dma.h"
-// #include "stm32f10x_exti.h"
+#include "stm32f10x_usart.h"
 #include "stm32f10x.h"
 #include "misc.h"
 
@@ -17,76 +15,114 @@ const uint16_t ROW_PIN_NUMBER[4] = {GPIO_IDR_IDR3, GPIO_IDR_IDR5, GPIO_IDR_IDR14
 const uint16_t COLUMN_PIN_NUMBER[4] = {GPIO_IDR_IDR2, GPIO_IDR_IDR4, GPIO_IDR_IDR6, GPIO_IDR_IDR13};
 int offset = 0;
 
+char DFPlayer_Cmd[10] = {0x7E, 0xFF, 0x06, 0, 0, 0, 0, 0, 0, 0xEF};
+
+char red[4][4] = {0,};
+char blue[4][4] = {0,};
+char green[4][4] = {0,};
+
 void RCC_configure(void) {
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO, ENABLE);
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO | RCC_APB2Periph_USART1, ENABLE);
 }
 
-/*
-void EXTI11_Config(void)
-{
-  EXTI_InitTypeDef EXTI_InitStructure;
-  NVIC_InitTypeDef NVIC_InitStructure;
 
-  GPIO_EXTILineConfig(GPIO_PortSourceGPIOE, GPIO_PinSource2);
-  GPIO_EXTILineConfig(GPIO_PortSourceGPIOE, GPIO_PinSource3);
-  GPIO_EXTILineConfig(GPIO_PortSourceGPIOE, GPIO_PinSource4);
-  GPIO_EXTILineConfig(GPIO_PortSourceGPIOE, GPIO_PinSource5);
-  GPIO_EXTILineConfig(GPIO_PortSourceGPIOE, GPIO_PinSource6);
-  GPIO_EXTILineConfig(GPIO_PortSourceGPIOC, GPIO_PinSource0);
-  GPIO_EXTILineConfig(GPIO_PortSourceGPIOC, GPIO_PinSource1);
-  GPIO_EXTILineConfig(GPIO_PortSourceGPIOC, GPIO_PinSource2);
-  GPIO_EXTILineConfig(GPIO_PortSourceGPIOC, GPIO_PinSource3);
-  GPIO_EXTILineConfig(GPIO_PortSourceGPIOC, GPIO_PinSource13);
-  GPIO_EXTILineConfig(GPIO_PortSourceGPIOC, GPIO_PinSource15);
+void UART_configure(void) {
+	USART_InitTypeDef USART_Init;
+	NVIC_InitTypeDef NVIC1_InitStruct;
 
-  EXTI_InitStructure.EXTI_Line = EXTI_Line0;
-  EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-  EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-  EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising_Falling;
-  EXTI_Init(&EXTI_InitStructure);
+	// Initialize USART1
+	USART_Init.USART_BaudRate = 115200;
+	USART_Init.USART_WordLength = USART_WordLength_8b;
+	USART_Init.USART_StopBits = USART_StopBits_1;
+	USART_Init.USART_Parity = USART_Parity_No;
+	USART_Init.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+	USART_Init.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+	USART_Init(USART3, &USART_Init);
 
-  NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
-  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0x00;
-  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x00;
-  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-  NVIC_Init(&NVIC_InitStructure);
-
-
+	// Initialize USART1 IRQ
+	  NVIC1_InitStruct.NVIC_IRQChannel = USART3_IRQn;
+	  NVIC1_InitStruct.NVIC_IRQChannelPreemptionPriority = 0;
+	  NVIC1_InitStruct.NVIC_IRQChannelSubPriority = 0;
+	  NVIC1_InitStruct.NVIC_IRQChannelCmd = ENABLE;
+	  NVIC_Init(&NVIC1_InitStruct);
 }
-*/
 
 void GPIO_configure(void) {
     GPIO_InitTypeDef GPIOx;
 
+    /*
+     * Pin IN
+     * BreakPad input row / col : PE3 ~ PC0, PE2 ~ PC13
+     * USART RX : PB11
+     * Offset setting Button : PD11, PD12
+     */
     GPIOx.GPIO_Mode = GPIO_Mode_IPD;
     GPIOx.GPIO_Speed = GPIO_Speed_50MHz;
     GPIOx.GPIO_Pin  = (GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6);
     GPIO_Init(GPIOA, &GPIOx);
     GPIOx.GPIO_Pin  = (GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
     GPIO_Init(GPIOC, &GPIOx);
-    GPIOx.GPIO_Pin = (GPIO_Pin_2);
+    GPIOx.GPIO_Pin = (GPIO_Pin_11 | GPIO_Pin_12 |GPIO_Pin_2);
     GPIO_Init(GPIOD, &GPIOx);
     GPIOx.GPIO_Pin  = (GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6);
     GPIO_Init(GPIOE, &GPIOx);
+    GPIOx.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIOx.GPIO_Pin = GPIO_Pin_11;
+    GPIO_Init(GPIOB, &GPIOx);
 
 
+    /*
+     *  Pin Out
+     *  LED RED :
+     *  LED BLUE :
+     *  LED GREEN :
+     *  USART TX : PB10
+     *
+     */
     GPIOx.GPIO_Mode = GPIO_Mode_Out_PP;
-    // LED Out
     GPIOx.GPIO_Pin = (GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
     GPIO_Init(GPIOA, &GPIOx);
-    GPIOx.GPIO_Pin = (GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
+    GPIOx.GPIO_Pin = (GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_14 | GPIO_Pin_15);
     GPIO_Init(GPIOB, &GPIOx);
     GPIOx.GPIO_Pin = (GPIO_Pin_2 | GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9);
 	GPIO_Init(GPIOC, &GPIOx);
-	GPIOx.GPIO_Pin = (GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
+	GPIOx.GPIO_Pin = (GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
 	GPIO_Init(GPIOD, &GPIOx);
 	GPIOx.GPIO_Pin = (GPIO_Pin_0 | GPIO_Pin_1);
 	GPIO_Init(GPIOE, &GPIOx);
+	GPIOx.GPIO_Mode = GPIO_Mode_AF_PP;
+	GPIOx.GPIO_Pin = GPIO_Pin_10;
+	GPIO_Init(GPIOB, &GPIOx);
+
+}
+
+void SendData(USART_TypeDef* USARTx, char dat){
+  USART_SendData(USARTx, dat);
+  while (!USART_GetFlagStatus(USARTx, USART_FLAG_TXE));
+}
+
+void SendStr(USART_TypeDef* USARTx, char* str, int len){
+  int i = 0;
+  for (i = 0; i < len; i++) {
+    SendData(USARTx, str[i]);
+  }
 }
 
 void play_music(int cur_row,int cur_col) {
 	int file_number = offset * 16 + cur_row * 4 + cur_col;
-	char data[8];
+
+	DFPlayer_Cmd[3] = (char)0x03;
+	DFPlayer_Cmd[4] = (char)0x00;
+	DFPlayer_Cmd[5] = (char)( 0x00 + file_number / 256 );
+	DFPlayer_Cmd[6] = (char)( 0x00 + file_number % 256 );
+	DFPlayer_Cmd[7] = (char)0xFE;
+	DFPlayer_Cmd[8] = (char)0xF4;
+	SendStr(USART1,DFPlayer_Cmd,10);
+
+}
+
+void led_on(int cur_row, int cur_col) {
+
 }
 
 int main(void) {
@@ -111,6 +147,7 @@ int main(void) {
 				for(j=0; j<4; j++) {
 					if(column_port[i] & COLUMN_PIN_NUMBER[i]) {
 						play_music(i,j);
+						led_on(i,j);
 					}
 				}
 			}

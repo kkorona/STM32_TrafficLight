@@ -7,10 +7,9 @@
 #include "led.h"
 
 void LED_Init(int n){
+  GPIO_InitTypeDef GPIOC_Init;
   //GPIOC enable
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
-  
-  GPIO_InitTypeDef GPIOC_Init;
 
   GPIOC_Init.GPIO_Speed = GPIO_Speed_10MHz;
   GPIOC_Init.GPIO_Mode = GPIO_Mode_Out_PP;
