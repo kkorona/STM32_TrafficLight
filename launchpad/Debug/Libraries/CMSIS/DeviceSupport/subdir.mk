@@ -14,7 +14,7 @@ OBJS += \
 Libraries/CMSIS/DeviceSupport/%.o: ../Libraries/CMSIS/DeviceSupport/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM C Compiler 5'
-	armcc -I"C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\launchpad\Libraries\CMSIS\CoreSupport" -I"C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\launchpad\Libraries\CMSIS\DeviceSupport" -I"C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\launchpad\Libraries\CMSIS\DeviceSupport\Startup" -I"C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\launchpad\Libraries\STM32F10x_StdPeriph_Driver_v3.5\inc" -I"C:\Users\enslab\Documents\DS-5 Workspace\STM32_Launchpad\launchpad\Libraries\STM32F10x_StdPeriph_Driver_v3.5\src" -O2 --cpu=cortex-m3 -g -c -o "$@" "$<"
+	armcc -I"C:\Users\Team5\Desktop\term\launchpad\Libraries\CMSIS\CoreSupport" -I"C:\Users\Team5\Desktop\term\launchpad\Libraries\CMSIS\DeviceSupport" -I"C:\Users\Team5\Desktop\term\launchpad\Libraries\CMSIS\DeviceSupport\Startup" -I"C:\Users\Team5\Desktop\term\launchpad\Libraries\STM32F10x_StdPeriph_Driver_v3.5\inc" -I"C:\Users\Team5\Desktop\term\launchpad\Libraries\STM32F10x_StdPeriph_Driver_v3.5\src" -O0 --cpu=cortex-m3 -g -c -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

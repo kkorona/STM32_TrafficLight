@@ -24,7 +24,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32F10x_StdPeriph_Driver_v3.5/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32F10x_StdPeriph_Driver_v3.5/src}&quot;"/>
 								</option>
-								<option id="com.arm.tool.c.compiler.baremetal.exe.debug.option.opt.883401969" name="Optimization level" superClass="com.arm.tool.c.compiler.baremetal.exe.debug.option.opt" value="com.arm.tool.c.compiler.option.optlevel.high" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.baremetal.exe.debug.option.opt.883401969" name="Optimization level" superClass="com.arm.tool.c.compiler.baremetal.exe.debug.option.opt" value="com.arm.tool.c.compiler.option.optlevel.min" valueType="enumerated"/>
 								<option id="com.arm.tool.c.compiler.option.targetcpu.25839341" name="Target CPU (--cpu)" superClass="com.arm.tool.c.compiler.option.targetcpu" value="cortex-m3" valueType="string"/>
 								<inputType id="com.arm.tool.c.compiler.input.1488141227" superClass="com.arm.tool.c.compiler.input"/>
 								<inputType id="com.arm.tool.cpp.compiler.input.1416836332" superClass="com.arm.tool.cpp.compiler.input"/>
@@ -34,8 +34,9 @@
 								<option id="com.arm.tool.assembler.option.cpu.377140854" name="Target CPU (--cpu)" superClass="com.arm.tool.assembler.option.cpu" value="cortex-m3" valueType="string"/>
 							</tool>
 							<tool id="com.arm.tool.c.linker.1317075006" name="ARM Linker 5" superClass="com.arm.tool.c.linker">
-								<option id="com.arm.tool.c.linker.option.scatter.641560154" name="Scatter file (--scatter)" superClass="com.arm.tool.c.linker.option.scatter" value="C:\STM32_Launchpad\STM32_Launchpad\launchpad\stm32-test.sct" valueType="string"/>
+								<option id="com.arm.tool.c.linker.option.scatter.641560154" name="Scatter file (--scatter)" superClass="com.arm.tool.c.linker.option.scatter" value="C:\Users\Team5\Desktop\term\launchpad\stm32-test.sct" valueType="string"/>
 								<option id="com.arm.tool.c.linker.option.cpu.1975787424" name="Target CPU (--cpu)" superClass="com.arm.tool.c.linker.option.cpu" value="cortex-m3" valueType="string"/>
+								<option id="com.arm.tool.c.linker.option.entry.150907387" name="Image entry point (--entry)" superClass="com.arm.tool.c.linker.option.entry" value="main" valueType="string"/>
 							</tool>
 							<tool id="com.arm.tool.librarian.1454857740" name="ARM Librarian 5" superClass="com.arm.tool.librarian"/>
 						</toolChain>
@@ -75,7 +76,7 @@
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-		<project id="launchpad.com.arm.eclipse.build.project.baremetal.exe.2083735936" name="Bare-metal Executable" projectType="com.arm.eclipse.build.project.baremetal.exe"/>
+		<project id="launchpad.com.arm.eclipse.build.project.baremetal.exe.160215168" name="Bare-metal Executable" projectType="com.arm.eclipse.build.project.baremetal.exe"/>
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
