@@ -4,7 +4,6 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/lcd.c \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/misc.c \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_adc.c \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_bkp.c \
@@ -28,11 +27,9 @@ C_SRCS += \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_spi.c \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_tim.c \
 ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_usart.c \
-../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_wwdg.c \
-../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/touch.c 
+../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_wwdg.c 
 
 OBJS += \
-./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/lcd.o \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/misc.o \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_adc.o \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_bkp.o \
@@ -56,15 +53,14 @@ OBJS += \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_spi.o \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_tim.o \
 ./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_usart.o \
-./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_wwdg.o \
-./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/touch.o 
+./Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/stm32f10x_wwdg.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
 Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/%.o: ../Libraries/STM32F10x_StdPeriph_Driver_v3.5/src/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM C Compiler 5'
-	armcc -I"C:\Users\Team5\Desktop\term\launchpad\Libraries\CMSIS\CoreSupport" -I"C:\Users\Team5\Desktop\term\launchpad\Libraries\CMSIS\DeviceSupport" -I"C:\Users\Team5\Desktop\term\launchpad\Libraries\CMSIS\DeviceSupport\Startup" -I"C:\Users\Team5\Desktop\term\launchpad\Libraries\STM32F10x_StdPeriph_Driver_v3.5\inc" -I"C:\Users\Team5\Desktop\term\launchpad\Libraries\STM32F10x_StdPeriph_Driver_v3.5\src" -O0 --cpu=cortex-m3 -g -c -o "$@" "$<"
+	armcc -I"C:\Users\Team03\Desktop\term\launchpad\Libraries\CMSIS\CoreSupport" -I"C:\Users\Team03\Desktop\term\launchpad\Libraries\CMSIS\DeviceSupport" -I"C:\Users\Team03\Desktop\term\launchpad\Libraries\CMSIS\DeviceSupport\Startup" -I"C:\Users\Team03\Desktop\term\launchpad\Libraries\STM32F10x_StdPeriph_Driver_v3.5\inc" -I"C:\Users\Team03\Desktop\term\launchpad\Libraries\STM32F10x_StdPeriph_Driver_v3.5\src" -O2 --cpu=cortex-m3 -g -c -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

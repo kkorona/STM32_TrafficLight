@@ -45,8 +45,8 @@ _weakref
 arm_ds.__init__|C:\Program Files\DS-5\sw\eclipse\dropins\plugins\com.arm.debug.interpreter.jython.api_5.18.0.20140404_100548\arm_ds\__init__.py
 arm_ds.debugger_v1|C:\Program Files\DS-5\sw\eclipse\dropins\plugins\com.arm.debug.interpreter.jython.api_5.18.0.20140404_100548\arm_ds\debugger_v1.py
 arm_ds.internal|C:\Program Files\DS-5\sw\eclipse\dropins\plugins\com.arm.debug.interpreter.jython.api_5.18.0.20140404_100548\arm_ds\internal.py
-arm_ds_launcher.__init__|C:\Users\Team5\AppData\Roaming\ARM\DS-5\workbench\configuration\org.eclipse.osgi\bundles\330\1\.cp\arm_ds_launcher\__init__.py
-arm_ds_launcher.targetcontrol|C:\Users\Team5\AppData\Roaming\ARM\DS-5\workbench\configuration\org.eclipse.osgi\bundles\330\1\.cp\arm_ds_launcher\targetcontrol.py
+arm_ds_launcher.__init__|C:\Users\Team03\AppData\Roaming\ARM\DS-5\workbench\configuration\org.eclipse.osgi\bundles\330\1\.cp\arm_ds_launcher\__init__.py
+arm_ds_launcher.targetcontrol|C:\Users\Team03\AppData\Roaming\ARM\DS-5\workbench\configuration\org.eclipse.osgi\bundles\330\1\.cp\arm_ds_launcher\targetcontrol.py
 array
 binascii
 cPickle
