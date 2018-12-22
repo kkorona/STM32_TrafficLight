@@ -34,7 +34,7 @@
 								<option id="com.arm.tool.assembler.option.cpu.377140854" name="Target CPU (--cpu)" superClass="com.arm.tool.assembler.option.cpu" value="cortex-m3" valueType="string"/>
 							</tool>
 							<tool id="com.arm.tool.c.linker.1317075006" name="ARM Linker 5" superClass="com.arm.tool.c.linker">
-								<option id="com.arm.tool.c.linker.option.scatter.641560154" name="Scatter file (--scatter)" superClass="com.arm.tool.c.linker.option.scatter" value="C:\Users\Team03\Desktop\term\launchpad\stm32-test.sct" valueType="string"/>
+								<option id="com.arm.tool.c.linker.option.scatter.641560154" name="Scatter file (--scatter)" superClass="com.arm.tool.c.linker.option.scatter" value="C:\Users\team00\Desktop\sibar\launchpad\stm32-test.sct" valueType="string"/>
 								<option id="com.arm.tool.c.linker.option.cpu.1975787424" name="Target CPU (--cpu)" superClass="com.arm.tool.c.linker.option.cpu" value="cortex-m3" valueType="string"/>
 								<option id="com.arm.tool.c.linker.option.entry.150907387" name="Image entry point (--entry)" superClass="com.arm.tool.c.linker.option.entry" value="" valueType="string"/>
 							</tool>

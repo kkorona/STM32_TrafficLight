@@ -5,8 +5,8 @@
  *      Author: Wed team 10
  */
 
-// flash load "C:\Users\Team03\Desktop\term\launchpad\Debug\flashclear.axf"
-// flash load "C:\Users\Team03\Desktop\term\launchpad\Debug\launchpad.axf"
+// flash load "C:\Users\team00\Desktop\sibar\launchpad\Debug\flashclear.axf"
+// flash load "C:\Users\team00\Desktop\sibar\launchpad\Debug\launchpad.axf"
 
 #include "stm32f10x_rcc.h"
 #include "stm32f10x_gpio.h"
@@ -14,28 +14,34 @@
 #include "stm32f10x.h"
 #include "misc.h"
 
-const uint16_t ROW_PIN_NUMBER[4] = {GPIO_IDR_IDR3, GPIO_IDR_IDR5, GPIO_IDR_IDR14, GPIO_IDR_IDR0};
-const uint16_t COLUMN_PIN_NUMBER[4] = {GPIO_IDR_IDR2, GPIO_IDR_IDR4, GPIO_IDR_IDR6, GPIO_IDR_IDR13};
 int offset = 0;
 
-const uint16_t RED_ROW_PIN_NUMBER[4] = {GPIO_Pin_0,GPIO_Pin_9,GPIO_Pin_4,GPIO_Pin_3};
-const uint16_t BLUE_ROW_PIN_NUMBER[4] = {GPIO_Pin_1,GPIO_Pin_6,GPIO_Pin_5,GPIO_Pin_5};
-const uint16_t GREEN_ROW_PIN_NUMBER[4] = {GPIO_Pin_8, GPIO_Pin_7, GPIO_Pin_7, GPIO_Pin_6};
-const uint16_t LED_COLUMN_PIN_NUMBER[4] = {GPIO_Pin_3,GPIO_Pin_4, GPIO_Pin_1, GPIO_Pin_2};
+uint16_t BTN_ROW_PIN_NUMBER[4] = {GPIO_Pin_3, GPIO_Pin_5, GPIO_Pin_14, GPIO_Pin_0};
+uint16_t BTN_COLUMN_PIN_NUMBER[4] = {GPIO_Pin_2, GPIO_Pin_4, GPIO_Pin_6, GPIO_Pin_13};
+uint16_t RED_PIN_NUMBER[4] = {GPIO_Pin_0,GPIO_Pin_9,GPIO_Pin_4,GPIO_Pin_3};
+uint16_t BLUE_PIN_NUMBER[4] = {GPIO_Pin_1,GPIO_Pin_6,GPIO_Pin_5,GPIO_Pin_5};
+uint16_t GREEN_PIN_NUMBER[4] = {GPIO_Pin_8, GPIO_Pin_7, GPIO_Pin_7, GPIO_Pin_6};
+uint16_t LED_COLUMN_PIN_NUMBER[4] = {GPIO_Pin_3,GPIO_Pin_4, GPIO_Pin_1, GPIO_Pin_2};
 
-uint32_t INPUT_ROW_PORT[4] = {GPIOE_BASE, GPIOE_BASE, GPIOC_BASE, GPIOC_BASE};
-uint32_t INPUT_COLUMN_PORT[4] = {GPIOE_BASE, GPIOE_BASE, GPIOE_BASE, GPIOC_BASE};
+uint32_t BTN_ROW_PORT[4] = {GPIOE_BASE, GPIOE_BASE, GPIOC_BASE, GPIOC_BASE};
+uint32_t BTN_COLUMN_PORT[4] = {GPIOE_BASE, GPIOE_BASE, GPIOE_BASE, GPIOC_BASE};
 uint32_t RED_PORT[4] = {GPIOE_BASE, GPIOB_BASE, GPIOB_BASE, GPIOB_BASE};
 uint32_t BLUE_PORT[4] = {GPIOE_BASE, GPIOB_BASE, GPIOB_BASE, GPIOD_BASE};
 uint32_t GREEN_PORT[4] = {GPIOB_BASE, GPIOB_BASE, GPIOD_BASE, GPIOD_BASE};
-uint32_t COLUMN_PORT[4] = {GPIOD_BASE,GPIOD_BASE, GPIOD_BASE, GPIOD_BASE};
+uint32_t LED_COLUMN_PORT[4] = {GPIOD_BASE,GPIOD_BASE, GPIOD_BASE, GPIOD_BASE};
 
 char DFPlayer_Cmd[10] = {0x7E, 0xFF, 0x06, 0, 0, 0, 0, 0, 0, 0xEF};
 
 char red[4][4] = {0,};
 char blue[4][4] = {0,};
 char green[4][4] = {0,};
+int debounce_count[4][4] = {0,};
+int btn_state[4][4] = {0,};
 
+void delay(int x) {
+	int i=0;
+	for(;i<x;i++);
+}
 
 void RCC_configure(void) {
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO | RCC_APB2Periph_USART1, ENABLE);
@@ -72,19 +78,22 @@ void GPIO_configure(void) {
      * USART RX : PB11
      * Offset setting Button : PD11, PD12
      */
+
+    /*
     GPIOx.GPIO_Mode = GPIO_Mode_IPU;
     GPIOx.GPIO_Speed = GPIO_Speed_50MHz;
     GPIOx.GPIO_Pin  = (GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6);
     GPIO_Init(GPIOA, &GPIOx);
-    GPIOx.GPIO_Pin  = (GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
+    GPIOx.GPIO_Pin  = (GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_14 | GPIO_Pin_15);
     GPIO_Init(GPIOC, &GPIOx);
     GPIOx.GPIO_Pin = (GPIO_Pin_11 | GPIO_Pin_12 |GPIO_Pin_2);
     GPIO_Init(GPIOD, &GPIOx);
-    GPIOx.GPIO_Pin  = (GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6);
+    GPIOx.GPIO_Pin  = (GPIO_Pin_3 | GPIO_Pin_5);
     GPIO_Init(GPIOE, &GPIOx);
     GPIOx.GPIO_Mode = GPIO_Mode_IN_FLOATING;
     GPIOx.GPIO_Pin = GPIO_Pin_11;
     GPIO_Init(GPIOB, &GPIOx);
+    */
 
 
     /*
@@ -100,11 +109,11 @@ void GPIO_configure(void) {
     GPIO_Init(GPIOA, &GPIOx);
     GPIOx.GPIO_Pin = (GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_14 | GPIO_Pin_15);
     GPIO_Init(GPIOB, &GPIOx);
-    GPIOx.GPIO_Pin = (GPIO_Pin_2 | GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9);
+    GPIOx.GPIO_Pin = (GPIO_Pin_2 | GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_13);
 	GPIO_Init(GPIOC, &GPIOx);
-	GPIOx.GPIO_Pin = (GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
+	GPIOx.GPIO_Pin = (GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
 	GPIO_Init(GPIOD, &GPIOx);
-	GPIOx.GPIO_Pin = (GPIO_Pin_0 | GPIO_Pin_1);
+	GPIOx.GPIO_Pin = (GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_4 | GPIO_Pin_6);
 	GPIO_Init(GPIOE, &GPIOx);
 	GPIOx.GPIO_Mode = GPIO_Mode_AF_PP;
 	GPIOx.GPIO_Pin = GPIO_Pin_10;
@@ -142,59 +151,66 @@ void set_port(uint32_t* port,const uint32_t *target) {
 	for(i=0; i<4; i++) port[i] = target[i];
 }
 
-void led_on(int cur_row, int cur_col, int color) {
-	uint32_t cur_port;
-	if(color == 0) {
-		//cur_port = RED_PORT[cur_row];
-		//(((GPIO_TypeDef *) cur_port)->BSRR) &= ~RED_ROW_PIN_NUMBER[cur_row];
-		cur_port = COLUMN_PORT[cur_col];
-		(((GPIO_TypeDef *) cur_port)->BSRR) &= ~LED_COLUMN_PIN_NUMBER[cur_row];
+void led_on() {
+	int i, j;
+	for(j=0; j<4; j++) {
+		((GPIO_TypeDef *)LED_COLUMN_PORT[j])->BRR |= LED_COLUMN_PIN_NUMBER[j];
+		for(i=0; i<4; i++) {
+			if(red[i][j]) {
+				((GPIO_TypeDef *)RED_PORT[i])->BSRR |= RED_PIN_NUMBER[i];
+			}
+			if(blue[i][j]) {
+				((GPIO_TypeDef *)BLUE_PORT[i])->BSRR |= BLUE_PIN_NUMBER[i];
+			}
+			if(green[i][j]) {
+				((GPIO_TypeDef *)BLUE_PORT[i])->BSRR |= BLUE_PIN_NUMBER[i];
+			}
+			delay(10000);
+			((GPIO_TypeDef *)RED_PORT[i])->BRR |= RED_PIN_NUMBER[i];
+			((GPIO_TypeDef *)BLUE_PORT[i])->BRR |= BLUE_PIN_NUMBER[i];
+			((GPIO_TypeDef *)GREEN_PORT[i])->BRR |= GREEN_PIN_NUMBER[i];
+		}
+		((GPIO_TypeDef *)LED_COLUMN_PORT[j])->BSRR |= LED_COLUMN_PIN_NUMBER[j];
 	}
-	else if(color == 1) {
-		cur_port = BLUE_PORT[cur_row];
-		(((GPIO_TypeDef *) cur_port)->BSRR) &= ~BLUE_ROW_PIN_NUMBER[cur_row];
-	}
-	else {
-		cur_port = GREEN_PORT[cur_row];
-		(((GPIO_TypeDef *) cur_port)->BSRR) &= ~GREEN_ROW_PIN_NUMBER[cur_row];
+}
+
+void read_button() {
+	int i,j;
+	for(i=0; i<4; i++) {
+		((GPIO_TypeDef *)BTN_COLUMN_PORT[i])->BRR |= BTN_COLUMN_PIN_NUMBER[i];
+		for(j=0; j<4; j++) {
+			if(((GPIO_TypeDef *)BTN_ROW_PORT[i])->IDR & BTN_ROW_PIN_NUMBER[i]) {
+
+
+			}
+		}
+		((GPIO_TypeDef *)BTN_COLUMN_PORT[i])->BSRR |= BTN_COLUMN_PIN_NUMBER[i];
 	}
 }
 
 int main(void) {
-	int i=0, j=0;
-	uint32_t row_port[4];
-	uint32_t column_port[4];
+	int i=0,j=0;
 	SystemInit();
 	RCC_configure();
 	GPIO_configure();
-	set_port(column_port,COLUMN_PORT);
-
-	set_port(row_port,RED_PORT);
 		for(i=0; i<4; i++) {
-		(((GPIO_TypeDef *)row_port[i])->BSRR) |= RED_ROW_PIN_NUMBER[i];
+		(((GPIO_TypeDef *)RED_PORT[i])->BRR) |= RED_PIN_NUMBER[i];
+		(((GPIO_TypeDef *)GREEN_PORT[i])->BRR) |= BLUE_PIN_NUMBER[i];
+		(((GPIO_TypeDef *)BLUE_PORT[i])->BRR) |= GREEN_PIN_NUMBER[i];
+		(((GPIO_TypeDef *)LED_COLUMN_PORT[i])->BSRR) |= LED_COLUMN_PIN_NUMBER[i];
+		(((GPIO_TypeDef *)BTN_COLUMN_PORT[i])->BSRR) |= BTN_COLUMN_PIN_NUMBER[i];
+	}
+
+	for(i=0; i<4; i++) {
 		for(j=0; j<4; j++) {
-			(((GPIO_TypeDef *)column_port[j])->BSRR) |= LED_COLUMN_PIN_NUMBER[j];
+			red[i][j]=1;
 		}
 	}
 
 	while(1) {
-		set_port(row_port,INPUT_ROW_PORT);
-		set_port(column_port,INPUT_COLUMN_PORT);
-		led_on(0,0,0);
-		led_on(3,3,0);
-		/*
-		for(i=0; i<4; i++) {
-			if(~(((GPIO_TypeDef *)row_port[i])->IDR) & ROW_PIN_NUMBER[i]) {
-				for(j=0; j<4; j++) {
-					if(~(((GPIO_TypeDef *)column_port[i])->IDR) & COLUMN_PIN_NUMBER[i]) {
-						play_music(i,j);
-						led_on(i,j,0);
-					}
-				}
-			}
-		}
-		*/
-		for(i=0;i<100000;i++);
+		led_on();
+
+		//read_button();
 
 	}
 

@@ -12,7 +12,6 @@ RM := clean
 -include Libraries/CMSIS/DeviceSupport/Startup/subdir.mk
 -include Libraries/CMSIS/DeviceSupport/subdir.mk
 -include Libraries/CMSIS/CoreSupport/subdir.mk
--include .metadata/.plugins/org.eclipse.cdt.make.core/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -24,10 +23,10 @@ RM := clean
 all: launchpad.axf
 
 # Tool invocations
-launchpad.axf: $(OBJS) C:\Users\Team03\Desktop\term\launchpad\stm32-test.sct $(USER_OBJS) $(LIBS)
+launchpad.axf: $(OBJS) C:\Users\team00\Desktop\sibar\launchpad\stm32-test.sct $(USER_OBJS) $(LIBS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker 5'
-	armlink --cpu=cortex-m3 --scatter="C:\Users\Team03\Desktop\term\launchpad\stm32-test.sct" --info=sizes -o "launchpad.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	armlink --cpu=cortex-m3 --scatter="C:\Users\team00\Desktop\sibar\launchpad\stm32-test.sct" --info=sizes -o "launchpad.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
