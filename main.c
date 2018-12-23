@@ -1,6 +1,6 @@
 #include "stm32f10x_rcc.h"
 #include "stm32f10x_gpio.h"
-#include "stm32f10x_usart.h"
+// #include "stm32f10x_usart.h"
 #include "stm32f10x_exti.h"
 #include "stm32f10x_tim.h"
 #include "stm32f10x.h"
@@ -15,7 +15,7 @@ uint16_t LED_PIN_NUMBER[3] = {GPIO_Pin_3, GPIO_Pin_4, GPIO_Pin_6};
 uint32_t BTN_PORT = GPIOD_BASE;
 uint32_t LED_PORT[3] = {GPIOE_BASE, GPIOE_BASE, GPIOE_BASE};
 
-char DFPlayer_Cmd[10] = {0x7E, 0xFF, 0x06, 0, 0, 0, 0, 0, 0, 0xEF};
+// char DFPlayer_Cmd[10] = {0x7E, 0xFF, 0x06, 0, 0, 0, 0, 0, 0, 0xEF};
 
 int led_state = 2;
 
@@ -100,9 +100,11 @@ void GPIO_configure(void) {
     GPIOx.GPIO_Speed = GPIO_Speed_50MHz;
     GPIOx.GPIO_Pin  = GPIO_Pin_11;
     GPIO_Init(GPIOD, &GPIOx);
+	/*
     GPIOx.GPIO_Mode = GPIO_Mode_IN_FLOATING;
     GPIOx.GPIO_Pin = GPIO_Pin_11;
     GPIO_Init(GPIOB, &GPIOx);
+    */
 
 
     /*
@@ -116,9 +118,9 @@ void GPIO_configure(void) {
 	GPIO_Init(GPIOE, &GPIOx);
 	GPIOx.GPIO_Pin = (GPIO_Pin_2 | GPIO_Pin_3);
 	GPIO_Init(GPIOD, &GPIOx);
-	GPIOx.GPIO_Mode = GPIO_Mode_AF_PP;
+	/*GPIOx.GPIO_Mode = GPIO_Mode_AF_PP;
 	GPIOx.GPIO_Pin = GPIO_Pin_10;
-	GPIO_Init(GPIOB, &GPIOx);
+	GPIO_Init(GPIOB, &GPIOx);*/
 
 }
 
@@ -231,14 +233,14 @@ int main(void) {
 	GPIO_configure();
 	EXTI11_configure();
 	TIM2_configure();
-	USART_configure();
+	//USART_configure();
 	for(i=0; i<3; i++) {
 		if(LED_PORT[i] != 0)
 			(((GPIO_TypeDef *)LED_PORT[i])->BRR) |= LED_PIN_NUMBER[i];
 		delay(10);
 		(((GPIO_TypeDef *)LED_PORT[i])->BRR) = 0;
 	}
-	
+	/*
 	DFPlayer_Cmd[3] = (char)0x06;
   	DFPlayer_Cmd[4] = (char)0x00;
  	 DFPlayer_Cmd[5] = (char)0x00;
@@ -246,6 +248,7 @@ int main(void) {
   	DFPlayer_Cmd[7] = (char)0xFE;
  	 DFPlayer_Cmd[8] = (char)0xF6;
 	SendStr(USART3,DFPlayer_Cmd,10);
+	*/
 
 	while(1) {
 
@@ -256,7 +259,7 @@ int main(void) {
 		
 		if(warningFlag) {
 			warningFlag = 0;
-			send_alert();
+			//send_alert();
 		}
 
 	}
