@@ -10,7 +10,7 @@ int offset = 0;
 int time = 0;
 
 uint16_t BTN_PIN_NUMBER = GPIO_Pin_0;
-uint16_t LED_PIN_NUMBER[3] = {GPIO_Pin_3, GPIO_Pin_8, GPIO_Pin_4};
+uint16_t LED_PIN_NUMBER[3] = {GPIO_Pin_3, GPIO_Pin_4, GPIO_Pin_5};
 
 uint32_t BTN_PORT = GPIOE_BASE;
 uint32_t LED_PORT[3] = {GPIOE_BASE, GPIOE_BASE, GPIOE_BASE};
@@ -23,6 +23,8 @@ const int TIME_PERIOD = 9;
 const int TIME_GO = 4;
 const int TIME_WAIT = 5;
 
+int warningFlag = 0;
+int timeFlag = 0;
 void delay(int x) {
 	int i=0;
 	for(;i<x;i++);
@@ -108,7 +110,7 @@ void GPIO_configure(void) {
      *
      */
     GPIOx.GPIO_Mode = GPIO_Mode_Out_PP;
-   	GPIOx.GPIO_Pin = (GPIO_Pin_1 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_8);
+   	GPIOx.GPIO_Pin = (GPIO_Pin_1 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5);
 	GPIO_Init(GPIOE, &GPIOx);
 	GPIOx.GPIO_Mode = GPIO_Mode_AF_PP;
 	GPIOx.GPIO_Pin = GPIO_Pin_10;
@@ -149,7 +151,7 @@ void SendStr(USART_TypeDef* USARTx, char* str, int len){
   }
 }
 
-void play_music(int _file_number) {
+void send_alert(int _file_number) {
 	int file_number = _file_number;
 
 	DFPlayer_Cmd[3] = (char)0x03;
@@ -164,15 +166,7 @@ void play_music(int _file_number) {
 
 void led_on(int time) {
 	int prev_state = 0;
-	if(led_state == 2 && time <= TIME_GO ) {
-		led_state = 0;
-	}
-	if(led_state == 0 && time > TIME_GO && time <= TIME_WAIT) {
-		led_state = 1;
-	}
-	if(led_state == 1 && time > TIME_WAIT && time <= TIME_PERIOD){
-		led_state = 2;
-	}
+	
 
 	prev_state = (led_state + 2)%3;
 
@@ -188,6 +182,15 @@ void led_on(int time) {
 void TIM2_IRQHandler(void) {
   time++;
   time%=TIME_PERIOD;
+  if(led_state == 2 && time <= TIME_GO ) {
+		led_state = 0; timeFlag = 1;
+	}
+	if(led_state == 0 && time > TIME_GO && time <= TIME_WAIT) {
+		led_state = 1; timeFlag = 1;
+	}
+	if(led_state == 1 && time > TIME_WAIT && time <= TIME_PERIOD){
+		led_state = 2; timeFlag = 1;
+	}
   TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
   //Clears the TIMx's interrupt pending bits.
 }
@@ -198,10 +201,7 @@ void EXTI0_IRQHandler(void) {
 		if((~((GPIO_TypeDef *)BTN_PORT)->IDR) & (BTN_PIN_NUMBER)) {
 		}
 		else {
-			GPIOE->BSRR |= GPIO_Pin_1;
-			delay(10000);
-			GPIOE->BSRR &= ~(GPIO_Pin_1);
-			GPIOE->BRR |= GPIO_Pin_1;
+			if(led_state == 2) warningFlag = 1;
 		}
 	    EXTI_ClearITPendingBit(EXTI_Line0);
 	}
@@ -223,7 +223,15 @@ int main(void) {
 
 	while(1) {
 
-		led_on(time);
+		if(timeFlag) {
+			led_on(time);
+			timeFlag = 0;
+		}
+		
+		if(warningFlag) {
+			warningFlag = 0;
+			send_alert(1);
+		}
 
 	}
 
