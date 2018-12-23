@@ -1,13 +1,3 @@
-/*
- * main.c
- *
- *  Created on: 2018. 12. 5.
- *      Author: Wed team 10
- */
-
-// flash load "C:\Users\Team09\Desktop\term\TrafficLight\Debug\flashclear.axf"
-// flash load "C:\Users\Team09\Desktop\term\TrafficLight\Debug\TrafficLight.axf"
-
 #include "stm32f10x_rcc.h"
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_usart.h"
@@ -82,7 +72,7 @@ void TIM2_configure() {
   /* TIM2 Initialize */
   TIM_TimeBaseStructure.TIM_Period = 1200;
   TIM_TimeBaseStructure.TIM_Prescaler = 60000;
-  //°è»ê¹æ¹ý : 1/72mhz * 1200 * 60000
+  //Â°Ã¨Â»ÃªÂ¹Ã¦Â¹Ã½ : 1/72mhz * 1200 * 60000
   TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
   TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
   TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
@@ -104,7 +94,7 @@ void GPIO_configure(void) {
 
     GPIOx.GPIO_Mode = GPIO_Mode_IPU;
     GPIOx.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIOx.GPIO_Pin  = (GPIO_Pin_0);
+    GPIOx.GPIO_Pin  = GPIO_Pin_0;
     GPIO_Init(GPIOE, &GPIOx);
     GPIOx.GPIO_Mode = GPIO_Mode_IN_FLOATING;
     GPIOx.GPIO_Pin = GPIO_Pin_11;
@@ -137,7 +127,7 @@ void EXTI0_configure(void)
   EXTI_InitStructure.EXTI_Line = EXTI_Line0;
   EXTI_InitStructure.EXTI_LineCmd = ENABLE;
   EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-  EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
+  EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising_Falling;
   EXTI_Init(&EXTI_InitStructure);
 
   NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
@@ -204,9 +194,15 @@ void TIM2_IRQHandler(void) {
 
 void EXTI0_IRQHandler(void) {
 	//play_music(1);
-	while (EXTI_GetITStatus(EXTI_Line0) != RESET) {
-		(((GPIO_TypeDef *)GPIOE)->BSRR) &= ~(GPIO_Pin_1);
-	    (((GPIO_TypeDef *)GPIOE)->BRR) |= GPIO_Pin_1;
+	if (EXTI_GetITStatus(EXTI_Line0) != RESET) {
+		if((~((GPIO_TypeDef *)BTN_PORT)->IDR) & (BTN_PIN_NUMBER)) {
+		}
+		else {
+			GPIOE->BSRR |= GPIO_Pin_1;
+			delay(10000);
+			GPIOE->BSRR &= ~(GPIO_Pin_1);
+			GPIOE->BRR |= GPIO_Pin_1;
+		}
 	    EXTI_ClearITPendingBit(EXTI_Line0);
 	}
 }
@@ -229,7 +225,6 @@ int main(void) {
 	while(1) {
 
 		led_on(time);
-		//read_button();
 
 	}
 
