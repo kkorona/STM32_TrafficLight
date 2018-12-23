@@ -9,10 +9,10 @@
 int offset = 0;
 int time = 0;
 
-uint16_t BTN_PIN_NUMBER = GPIO_Pin_11;
+uint16_t BTN_PIN_NUMBER = GPIO_Pin_13;
 uint16_t LED_PIN_NUMBER[3] = {GPIO_Pin_3, GPIO_Pin_4, GPIO_Pin_6};
 
-uint32_t BTN_PORT = GPIOD_BASE;
+uint32_t BTN_PORT = GPIOC_BASE;
 uint32_t LED_PORT[3] = {GPIOE_BASE, GPIOE_BASE, GPIOE_BASE};
 
 char DFPlayer_Cmd[10] = {0x7E, 0xFF, 0x06, 0, 0, 0, 0, 0, 0, 0xEF};
@@ -97,8 +97,8 @@ void GPIO_configure(void) {
 
     GPIOx.GPIO_Mode = GPIO_Mode_IPU;
     GPIOx.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIOx.GPIO_Pin  = GPIO_Pin_11;
-    GPIO_Init(GPIOD, &GPIOx);
+    GPIOx.GPIO_Pin  = GPIO_Pin_13;
+    GPIO_Init(GPIOC, &GPIOx);
     GPIOx.GPIO_Mode = GPIO_Mode_IN_FLOATING;
     GPIOx.GPIO_Pin = GPIO_Pin_11;
     GPIO_Init(GPIOB, &GPIOx);
@@ -121,21 +121,21 @@ void GPIO_configure(void) {
 
 }
 
-void EXTI0_configure(void)
+void EXTI13_configure(void)
 {
   EXTI_InitTypeDef EXTI_InitStructure;
   NVIC_InitTypeDef NVIC_InitStructure;
 
-  GPIO_EXTILineConfig(GPIO_PortSourceGPIOE, GPIO_PinSource0);
+  GPIO_EXTILineConfig(GPIO_PortSourceGPIOC, GPIO_PinSource13);
 
 
-  EXTI_InitStructure.EXTI_Line = EXTI_Line0;
+  EXTI_InitStructure.EXTI_Line = EXTI_Line13;
   EXTI_InitStructure.EXTI_LineCmd = ENABLE;
   EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
   EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising_Falling;
   EXTI_Init(&EXTI_InitStructure);
 
-  NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
+  NVIC_InitStructure.NVIC_IRQChannel = EXTI13_IRQn;
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
@@ -197,9 +197,9 @@ void TIM2_IRQHandler(void) {
   //Clears the TIMx's interrupt pending bits.
 }
 
-void EXTI0_IRQHandler(void) {
+void EXTI15_10_IRQHandler(void) {
 	//play_music(1);
-	if (EXTI_GetITStatus(EXTI_Line0) != RESET) {
+	if (EXTI_GetITStatus(EXTI_Line13) != RESET) {
 		if((~((GPIO_TypeDef *)BTN_PORT)->IDR) & (BTN_PIN_NUMBER)) {
 			GPIO_SetBits(GPIOD,GPIO_Pin_3);
 			delay(10000);
