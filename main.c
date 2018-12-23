@@ -156,7 +156,6 @@ void SendStr(USART_TypeDef* USARTx, char* str, int len){
 
 void send_alert(int _file_number) {
 	
-	/*
 	DFPlayer_Cmd[3] = (char)0x03;
 	DFPlayer_Cmd[4] = (char)0x00;
 	DFPlayer_Cmd[5] = (char)( 0x00 + file_number / 256 );
@@ -164,7 +163,6 @@ void send_alert(int _file_number) {
 	DFPlayer_Cmd[7] = (char)0xFE;
 	DFPlayer_Cmd[8] = (char)0xF4;
 	SendStr(USART3,DFPlayer_Cmd,10);
-	*/
 }
 
 void led_on(int time) {
@@ -201,16 +199,14 @@ void EXTI15_10_IRQHandler(void) {
 	//play_music(1);
 	if (EXTI_GetITStatus(EXTI_Line11) != RESET) {
 		if((~((GPIO_TypeDef *)BTN_PORT)->IDR) & (BTN_PIN_NUMBER)) {
-			GPIO_SetBits(GPIOD,GPIO_Pin_3);
-			delay(10000);
-			GPIO_ResetBits(GPIOD,GPIO_Pin_3);
 		}
 		else {
-			//if(led_state == 2) {
+			send_alert(1);
+			if(led_state == 2) {
 				GPIO_SetBits(GPIOD,GPIO_Pin_2);
 				delay(10000);
 				GPIO_ResetBits(GPIOD,GPIO_Pin_2);
-			//}
+			}
 		}
 	    EXTI_ClearITPendingBit(EXTI_Line11);
 	}
@@ -240,7 +236,7 @@ int main(void) {
 		
 		if(warningFlag) {
 			warningFlag = 0;
-			//send_alert(1);
+			send_alert(1);
 		}
 
 	}
