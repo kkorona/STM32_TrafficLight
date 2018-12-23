@@ -212,7 +212,7 @@ void EXTI15_10_IRQHandler(void) {
 				GPIO_ResetBits(GPIOD,GPIO_Pin_2);
 			//}
 		}
-	    EXTI_ClearITPendingBit(EXTI_Line0);
+	    EXTI_ClearITPendingBit(EXTI_Line13);
 	}
 }
 
