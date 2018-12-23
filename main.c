@@ -19,9 +19,9 @@ char DFPlayer_Cmd[10] = {0x7E, 0xFF, 0x06, 0, 0, 0, 0, 0, 0, 0xEF};
 
 int led_state = 0;
 
-const int TIME_PERIOD = 10;
-const int TIME_GO = 5;
-const int TIME_WAIT = 6;
+const int TIME_PERIOD = 9;
+const int TIME_GO = 4;
+const int TIME_WAIT = 5;
 
 void delay(int x) {
 	int i=0;
@@ -38,7 +38,7 @@ void USART_configure(void) {
 	NVIC_InitTypeDef NVIC1_InitStruct;
 
 	// Initialize USART1
-	USART3_Init.USART_BaudRate = 115200;
+	USART3_Init.USART_BaudRate = 9600;
 	USART3_Init.USART_WordLength = USART_WordLength_8b;
 	USART3_Init.USART_StopBits = USART_StopBits_1;
 	USART3_Init.USART_Parity = USART_Parity_No;
@@ -70,8 +70,8 @@ void TIM2_configure() {
   NVIC_Init(&NVIC_InitStructure);
 
   /* TIM2 Initialize */
-  TIM_TimeBaseStructure.TIM_Period = 1200;
-  TIM_TimeBaseStructure.TIM_Prescaler = 60000;
+  TIM_TimeBaseStructure.TIM_Period = 1200-1;
+  TIM_TimeBaseStructure.TIM_Prescaler = 60000-1;
   //°è»ê¹æ¹ý : 1/72mhz * 1200 * 60000
   TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
   TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
@@ -103,7 +103,7 @@ void GPIO_configure(void) {
 
     /*
      *  Pin Out
-     *  LED : PE2 PE3 PE4 PE5
+     *  LED : PE3 PE4 PE8
      *  USART TX : PB10
      *
      */
@@ -131,8 +131,8 @@ void EXTI0_configure(void)
   EXTI_Init(&EXTI_InitStructure);
 
   NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
-  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0x01;
-  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x00;
+  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
 }
@@ -217,11 +217,10 @@ int main(void) {
 	for(i=0; i<3; i++) {
 		if(LED_PORT[i] != 0)
 			(((GPIO_TypeDef *)LED_PORT[i])->BRR) |= LED_PIN_NUMBER[i];
-		delay(1);
+		delay(10);
 		(((GPIO_TypeDef *)LED_PORT[i])->BRR) = 0;
 	}
 
-	(((GPIO_TypeDef *)GPIOE)->BSRR) |= GPIO_Pin_1;
 	while(1) {
 
 		led_on(time);
