@@ -207,12 +207,11 @@ void EXTI0_IRQHandler(void) {
 		if((~((GPIO_TypeDef *)BTN_PORT)->IDR) & (BTN_PIN_NUMBER)) {
 		}
 		else {
-			if(led_state == 2) {
-				GPIOD->BSRR |= GPIO_Pin_2;
+			//if(led_state == 2) {
+				GPIO_SetBits(GPIOD,GPIO_Pin_2);
 				delay(10000);
-				GPIOD->BSRR &= (~GPIO_Pin_2);
-				GPIOD->BRR |= GPIO_Pin_2;
-			}
+				GPIO_ResetBits(GPIOD,GPIO_Pin_2);
+			//}
 		}
 	    EXTI_ClearITPendingBit(EXTI_Line0);
 	}
