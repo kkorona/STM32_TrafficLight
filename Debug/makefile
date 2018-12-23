@@ -20,19 +20,19 @@ RM := clean
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: launchpad.axf
+all: TrafficLight.axf
 
 # Tool invocations
-launchpad.axf: $(OBJS) C:\Users\team00\Desktop\sibar\launchpad\stm32-test.sct $(USER_OBJS) $(LIBS)
+TrafficLight.axf: $(OBJS) C:\Users\Team09\Desktop\term\TrafficLight\stm32-test.sct $(USER_OBJS) $(LIBS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker 5'
-	armlink --cpu=cortex-m3 --scatter="C:\Users\team00\Desktop\sibar\launchpad\stm32-test.sct" --info=sizes -o "launchpad.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	armlink --cpu=cortex-m3 --scatter="C:\Users\Team09\Desktop\term\TrafficLight\stm32-test.sct" --info=sizes -o "TrafficLight.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS) $(EXECUTABLES) launchpad.axf 
+	-$(RM) $(OBJS) $(EXECUTABLES) TrafficLight.axf 
 	-@echo ' '
 
 .PHONY: all clean dependents
