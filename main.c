@@ -17,7 +17,7 @@ uint32_t LED_PORT[3] = {GPIOE_BASE, GPIOE_BASE, GPIOE_BASE};
 
 char DFPlayer_Cmd[10] = {0x7E, 0xFF, 0x06, 0, 0, 0, 0, 0, 0, 0xEF};
 
-int led_state = 0;
+int led_state = 2;
 
 const int TIME_PERIOD = 9;
 const int TIME_GO = 4;
@@ -54,6 +54,7 @@ void USART_configure(void) {
 	  NVIC1_InitStruct.NVIC_IRQChannelSubPriority = 0;
 	  NVIC1_InitStruct.NVIC_IRQChannelCmd = ENABLE;
 	  NVIC_Init(&NVIC1_InitStruct);
+	USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
 	USART_Cmd(USART3, ENABLE);
 }
 
@@ -158,11 +159,19 @@ void send_alert(int _file_number) {
 	
 	DFPlayer_Cmd[3] = (char)0x03;
 	DFPlayer_Cmd[4] = (char)0x00;
-	DFPlayer_Cmd[5] = (char)( 0x00 + file_number / 256 );
-	DFPlayer_Cmd[6] = (char)( 0x00 + file_number % 256 );
+	DFPlayer_Cmd[5] = (char)0x00;
+	DFPlayer_Cmd[6] = (char)0x01;
 	DFPlayer_Cmd[7] = (char)0xFE;
 	DFPlayer_Cmd[8] = (char)0xF4;
 	SendStr(USART3,DFPlayer_Cmd,10);
+}
+
+void USART3_IRQHandler(void) {
+  if (USART_GetITStatus(USART3, USART_IT_RXNE) != RESET) {
+    USART_ClearITPendingBit(USART3, USART_IT_RXNE);
+    //while (!USART_GetFlagStatus(USART1, USART_FLAG_TXE));
+    //USART_SendData(USART1, chit);
+  }
 }
 
 void led_on(int time) {
@@ -201,8 +210,11 @@ void EXTI15_10_IRQHandler(void) {
 		if((~((GPIO_TypeDef *)BTN_PORT)->IDR) & (BTN_PIN_NUMBER)) {
 		}
 		else {
-			send_alert(1);
+			GPIO_SetBits(GPIOD,GPIO_Pin_3);
+				delay(10000);
+				GPIO_ResetBits(GPIOD,GPIO_Pin_3);
 			if(led_state == 2) {
+				warningFlag = 1;		
 				GPIO_SetBits(GPIOD,GPIO_Pin_2);
 				delay(10000);
 				GPIO_ResetBits(GPIOD,GPIO_Pin_2);
@@ -226,6 +238,14 @@ int main(void) {
 		delay(10);
 		(((GPIO_TypeDef *)LED_PORT[i])->BRR) = 0;
 	}
+	
+	DFPlayer_Cmd[3] = (char)0x06;
+  	DFPlayer_Cmd[4] = (char)0x00;
+ 	 DFPlayer_Cmd[5] = (char)0x00;
+  	DFPlayer_Cmd[6] = (char)0x05;
+  	DFPlayer_Cmd[7] = (char)0xFE;
+ 	 DFPlayer_Cmd[8] = (char)0xF6;
+	SendStr(USART3,DFPlayer_Cmd,10);
 
 	while(1) {
 
@@ -236,7 +256,7 @@ int main(void) {
 		
 		if(warningFlag) {
 			warningFlag = 0;
-			send_alert(1);
+			send_alert();
 		}
 
 	}
