@@ -113,7 +113,7 @@ void GPIO_configure(void) {
     GPIOx.GPIO_Mode = GPIO_Mode_Out_PP;
    	GPIOx.GPIO_Pin = (GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_6);
 	GPIO_Init(GPIOE, &GPIOx);
-	GPIOx.GPIO_Pin = GPIO_Pin_2;
+	GPIOx.GPIO_Pin = (GPIO_Pin_2 | GPIO_Pin_3);
 	GPIO_Init(GPIOD, &GPIOx);
 	GPIOx.GPIO_Mode = GPIO_Mode_AF_PP;
 	GPIOx.GPIO_Pin = GPIO_Pin_10;
@@ -156,10 +156,6 @@ void SendStr(USART_TypeDef* USARTx, char* str, int len){
 
 void send_alert(int _file_number) {
 	
-	GPIOD->BSRR |= GPIO_Pin_2;
-	delay(100000);
-	GPIOD->BSRR &= (~GPIO_Pin_2);
-	GPIOD->BRR |= GPIO_Pin_2;
 	/*
 	DFPlayer_Cmd[3] = (char)0x03;
 	DFPlayer_Cmd[4] = (char)0x00;
@@ -205,6 +201,9 @@ void EXTI0_IRQHandler(void) {
 	//play_music(1);
 	if (EXTI_GetITStatus(EXTI_Line0) != RESET) {
 		if((~((GPIO_TypeDef *)BTN_PORT)->IDR) & (BTN_PIN_NUMBER)) {
+			GPIO_SetBits(GPIOD,GPIO_Pin_3);
+			delay(10000);
+			GPIO_RestBits(GPIOD,GPIO_Pin_3);
 		}
 		else {
 			//if(led_state == 2) {
