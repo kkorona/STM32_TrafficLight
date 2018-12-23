@@ -9,10 +9,10 @@
 int offset = 0;
 int time = 0;
 
-uint16_t BTN_PIN_NUMBER = GPIO_Pin_0;
-uint16_t LED_PIN_NUMBER[3] = {GPIO_Pin_3, GPIO_Pin_4, GPIO_Pin_5};
+uint16_t BTN_PIN_NUMBER = GPIO_Pin_13;
+uint16_t LED_PIN_NUMBER[3] = {GPIO_Pin_3, GPIO_Pin_4, GPIO_Pin_6};
 
-uint32_t BTN_PORT = GPIOE_BASE;
+uint32_t BTN_PORT = GPIOC_BASE;
 uint32_t LED_PORT[3] = {GPIOE_BASE, GPIOE_BASE, GPIOE_BASE};
 
 char DFPlayer_Cmd[10] = {0x7E, 0xFF, 0x06, 0, 0, 0, 0, 0, 0, 0xEF};
@@ -50,7 +50,7 @@ void USART_configure(void) {
 
 	// Initialize USART1 IRQ
 	  NVIC1_InitStruct.NVIC_IRQChannel = USART3_IRQn;
-	  NVIC1_InitStruct.NVIC_IRQChannelPreemptionPriority = 1;
+	  NVIC1_InitStruct.NVIC_IRQChannelPreemptionPriority = 0;
 	  NVIC1_InitStruct.NVIC_IRQChannelSubPriority = 0;
 	  NVIC1_InitStruct.NVIC_IRQChannelCmd = ENABLE;
 	  NVIC_Init(&NVIC1_InitStruct);
@@ -66,7 +66,7 @@ void TIM2_configure() {
 
   /* Enable TIM2 Global Interrupt */
   NVIC_InitStructure.NVIC_IRQChannel = TIM2_IRQn;
-  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;
+  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
@@ -96,8 +96,8 @@ void GPIO_configure(void) {
 
     GPIOx.GPIO_Mode = GPIO_Mode_IPU;
     GPIOx.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIOx.GPIO_Pin  = GPIO_Pin_0;
-    GPIO_Init(GPIOE, &GPIOx);
+    GPIOx.GPIO_Pin  = GPIO_Pin_13;
+    GPIO_Init(GPIOC, &GPIOx);
     GPIOx.GPIO_Mode = GPIO_Mode_IN_FLOATING;
     GPIOx.GPIO_Pin = GPIO_Pin_11;
     GPIO_Init(GPIOB, &GPIOx);
@@ -110,7 +110,7 @@ void GPIO_configure(void) {
      *
      */
     GPIOx.GPIO_Mode = GPIO_Mode_Out_PP;
-   	GPIOx.GPIO_Pin = (GPIO_Pin_1 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5);
+   	GPIOx.GPIO_Pin = (GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_6);
 	GPIO_Init(GPIOE, &GPIOx);
 	GPIOx.GPIO_Mode = GPIO_Mode_AF_PP;
 	GPIOx.GPIO_Pin = GPIO_Pin_10;
@@ -133,7 +133,7 @@ void EXTI0_configure(void)
   EXTI_Init(&EXTI_InitStructure);
 
   NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
-  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
@@ -166,7 +166,6 @@ void send_alert(int _file_number) {
 
 void led_on(int time) {
 	int prev_state = 0;
-	
 
 	prev_state = (led_state + 2)%3;
 
@@ -214,6 +213,7 @@ int main(void) {
 	GPIO_configure();
 	EXTI0_configure();
 	TIM2_configure();
+	USART_configure();
 	for(i=0; i<3; i++) {
 		if(LED_PORT[i] != 0)
 			(((GPIO_TypeDef *)LED_PORT[i])->BRR) |= LED_PIN_NUMBER[i];
