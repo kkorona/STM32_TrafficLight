@@ -135,7 +135,7 @@ void EXTI13_configure(void)
   EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising_Falling;
   EXTI_Init(&EXTI_InitStructure);
 
-  NVIC_InitStructure.NVIC_IRQChannel = EXTI13_IRQn;
+  NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn;
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
@@ -203,7 +203,7 @@ void EXTI15_10_IRQHandler(void) {
 		if((~((GPIO_TypeDef *)BTN_PORT)->IDR) & (BTN_PIN_NUMBER)) {
 			GPIO_SetBits(GPIOD,GPIO_Pin_3);
 			delay(10000);
-			GPIO_RestBits(GPIOD,GPIO_Pin_3);
+			GPIO_ResetBits(GPIOD,GPIO_Pin_3);
 		}
 		else {
 			//if(led_state == 2) {
@@ -221,7 +221,7 @@ int main(void) {
 	SystemInit();
 	RCC_configure();
 	GPIO_configure();
-	EXTI0_configure();
+	EXTI13_configure();
 	TIM2_configure();
 	USART_configure();
 	for(i=0; i<3; i++) {
