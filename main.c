@@ -31,7 +31,7 @@ void delay(int x) {
 }
 
 void RCC_configure(void) {
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOE | RCC_APB2Periph_GPIOB | RCC_APB2Periph_AFIO | RCC_APB2Periph_USART1, ENABLE);
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOE | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOD | RCC_APB2Periph_AFIO | RCC_APB2Periph_USART1, ENABLE);
 }
 
 
@@ -54,6 +54,7 @@ void USART_configure(void) {
 	  NVIC1_InitStruct.NVIC_IRQChannelSubPriority = 0;
 	  NVIC1_InitStruct.NVIC_IRQChannelCmd = ENABLE;
 	  NVIC_Init(&NVIC1_InitStruct);
+	USART_Cmd(USART3, ENABLE);
 }
 
 
@@ -112,6 +113,8 @@ void GPIO_configure(void) {
     GPIOx.GPIO_Mode = GPIO_Mode_Out_PP;
    	GPIOx.GPIO_Pin = (GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_6);
 	GPIO_Init(GPIOE, &GPIOx);
+	GPIOx.GPIO_Pin = GPIO_Pin_7;
+	GPIO_Init(GPIOD, &GPIOx);
 	GPIOx.GPIO_Mode = GPIO_Mode_AF_PP;
 	GPIOx.GPIO_Pin = GPIO_Pin_10;
 	GPIO_Init(GPIOB, &GPIOx);
@@ -152,8 +155,12 @@ void SendStr(USART_TypeDef* USARTx, char* str, int len){
 }
 
 void send_alert(int _file_number) {
-	int file_number = _file_number;
-
+	
+	GPIOD->BSRR |= GPIO_Pin_7;
+	delay(10000);
+	GPIOD->BSRR &= (~GPIO_Pin_7);
+	GPIOD->BRR |= 0;
+	/*
 	DFPlayer_Cmd[3] = (char)0x03;
 	DFPlayer_Cmd[4] = (char)0x00;
 	DFPlayer_Cmd[5] = (char)( 0x00 + file_number / 256 );
@@ -161,7 +168,7 @@ void send_alert(int _file_number) {
 	DFPlayer_Cmd[7] = (char)0xFE;
 	DFPlayer_Cmd[8] = (char)0xF4;
 	SendStr(USART3,DFPlayer_Cmd,10);
-
+	*/
 }
 
 void led_on(int time) {
@@ -228,7 +235,10 @@ int main(void) {
 			timeFlag = 0;
 		}
 		
-		send_alert(1);
+		if(warningFlag) {
+			warningFlag = 0;
+			send_alert(1);
+		}
 
 	}
 
