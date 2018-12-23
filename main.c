@@ -9,10 +9,10 @@
 int offset = 0;
 int time = 0;
 
-uint16_t BTN_PIN_NUMBER = GPIO_Pin_13;
+uint16_t BTN_PIN_NUMBER = GPIO_Pin_11;
 uint16_t LED_PIN_NUMBER[3] = {GPIO_Pin_3, GPIO_Pin_4, GPIO_Pin_6};
 
-uint32_t BTN_PORT = GPIOC_BASE;
+uint32_t BTN_PORT = GPIOD_BASE;
 uint32_t LED_PORT[3] = {GPIOE_BASE, GPIOE_BASE, GPIOE_BASE};
 
 char DFPlayer_Cmd[10] = {0x7E, 0xFF, 0x06, 0, 0, 0, 0, 0, 0, 0xEF};
@@ -97,8 +97,8 @@ void GPIO_configure(void) {
 
     GPIOx.GPIO_Mode = GPIO_Mode_IPU;
     GPIOx.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIOx.GPIO_Pin  = GPIO_Pin_13;
-    GPIO_Init(GPIOC, &GPIOx);
+    GPIOx.GPIO_Pin  = GPIO_Pin_11;
+    GPIO_Init(GPIOD, &GPIOx);
     GPIOx.GPIO_Mode = GPIO_Mode_IN_FLOATING;
     GPIOx.GPIO_Pin = GPIO_Pin_11;
     GPIO_Init(GPIOB, &GPIOx);
