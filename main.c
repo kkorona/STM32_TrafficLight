@@ -228,10 +228,7 @@ int main(void) {
 			timeFlag = 0;
 		}
 		
-		if(warningFlag) {
-			warningFlag = 0;
-			send_alert(1);
-		}
+		send_alert(1);
 
 	}
 
