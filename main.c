@@ -1,6 +1,9 @@
+﻿//flash load "C:\Users\Team5\Desktop\term\term\Debug\flashclear.axf"
+//flash load "C:\Users\Team5\Desktop\term\term\Debug\term.axf"
+
 #include "stm32f10x_rcc.h"
 #include "stm32f10x_gpio.h"
-// #include "stm32f10x_usart.h"
+#include "stm32f10x_usart.h"
 #include "stm32f10x_exti.h"
 #include "stm32f10x_tim.h"
 #include "stm32f10x.h"
@@ -15,7 +18,8 @@ uint16_t LED_PIN_NUMBER[3] = {GPIO_Pin_3, GPIO_Pin_4, GPIO_Pin_6};
 uint32_t BTN_PORT = GPIOD_BASE;
 uint32_t LED_PORT[3] = {GPIOE_BASE, GPIOE_BASE, GPIOE_BASE};
 
-// char DFPlayer_Cmd[10] = {0x7E, 0xFF, 0x06, 0, 0, 0, 0, 0, 0, 0xEF};
+char DFPlayer_Cmd[10] = {0x7E, 0xFF, 0x06, 0, 0, 0, 0, 0, 0, 0xEF};
+char chit = 0;
 
 int led_state = 2;
 
@@ -31,31 +35,32 @@ void delay(int x) {
 }
 
 void RCC_configure(void) {
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOE | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOC | RCC_APB2Periph_AFIO | RCC_APB2Periph_USART1, ENABLE);
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOE | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOC | RCC_APB2Periph_AFIO, ENABLE);
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3, ENABLE);
 }
 
 
 void USART_configure(void) {
+	NVIC_InitTypeDef NVIC3_InitStruct;
 	USART_InitTypeDef USART3_Init;
-	NVIC_InitTypeDef NVIC1_InitStruct;
 
-	// Initialize USART1
+	// Initialize USART3
 	USART3_Init.USART_BaudRate = 9600;
 	USART3_Init.USART_WordLength = USART_WordLength_8b;
 	USART3_Init.USART_StopBits = USART_StopBits_1;
 	USART3_Init.USART_Parity = USART_Parity_No;
 	USART3_Init.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-	USART3_Init.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+	USART3_Init.USART_Mode = USART_Mode_Tx | USART_Mode_Rx;
 	USART_Init(USART3, &USART3_Init);
 
-	// Initialize USART1 IRQ
-	  NVIC1_InitStruct.NVIC_IRQChannel = USART3_IRQn;
-	  NVIC1_InitStruct.NVIC_IRQChannelPreemptionPriority = 0;
-	  NVIC1_InitStruct.NVIC_IRQChannelSubPriority = 0;
-	  NVIC1_InitStruct.NVIC_IRQChannelCmd = ENABLE;
-	  NVIC_Init(&NVIC1_InitStruct);
-	USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
-	USART_Cmd(USART3, ENABLE);
+	 NVIC3_InitStruct.NVIC_IRQChannel = USART3_IRQn;
+	  NVIC3_InitStruct.NVIC_IRQChannelPreemptionPriority = 0;
+	  NVIC3_InitStruct.NVIC_IRQChannelSubPriority = 0;
+	  NVIC3_InitStruct.NVIC_IRQChannelCmd = ENABLE;
+	  NVIC_Init(&NVIC3_InitStruct);
+
+	  USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
+	  USART_Cmd(USART3, ENABLE);
 }
 
 
@@ -76,7 +81,7 @@ void TIM2_configure() {
   /* TIM2 Initialize */
   TIM_TimeBaseStructure.TIM_Period = 1200-1;
   TIM_TimeBaseStructure.TIM_Prescaler = 60000-1;
-  //°è»ê¹æ¹ý : 1/72mhz * 1200 * 60000
+  //째챔쨩챗쨔챈쨔첵 : 1/72mhz * 1200 * 60000
   TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
   TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
   TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
@@ -100,11 +105,9 @@ void GPIO_configure(void) {
     GPIOx.GPIO_Speed = GPIO_Speed_50MHz;
     GPIOx.GPIO_Pin  = GPIO_Pin_11;
     GPIO_Init(GPIOD, &GPIOx);
-	/*
     GPIOx.GPIO_Mode = GPIO_Mode_IN_FLOATING;
     GPIOx.GPIO_Pin = GPIO_Pin_11;
     GPIO_Init(GPIOB, &GPIOx);
-    */
 
 
     /*
@@ -118,9 +121,9 @@ void GPIO_configure(void) {
 	GPIO_Init(GPIOE, &GPIOx);
 	GPIOx.GPIO_Pin = (GPIO_Pin_2 | GPIO_Pin_3);
 	GPIO_Init(GPIOD, &GPIOx);
-	/*GPIOx.GPIO_Mode = GPIO_Mode_AF_PP;
+	GPIOx.GPIO_Mode = GPIO_Mode_AF_PP;
 	GPIOx.GPIO_Pin = GPIO_Pin_10;
-	GPIO_Init(GPIOB, &GPIOx);*/
+	GPIO_Init(GPIOB, &GPIOx);
 
 }
 
@@ -157,23 +160,15 @@ void SendStr(USART_TypeDef* USARTx, char* str, int len){
   }
 }
 
-void send_alert(int _file_number) {
+void send_alert() {
 	
 	DFPlayer_Cmd[3] = (char)0x03;
 	DFPlayer_Cmd[4] = (char)0x00;
 	DFPlayer_Cmd[5] = (char)0x00;
 	DFPlayer_Cmd[6] = (char)0x01;
 	DFPlayer_Cmd[7] = (char)0xFE;
-	DFPlayer_Cmd[8] = (char)0xF4;
+	DFPlayer_Cmd[8] = (char)0xF7;
 	SendStr(USART3,DFPlayer_Cmd,10);
-}
-
-void USART3_IRQHandler(void) {
-  if (USART_GetITStatus(USART3, USART_IT_RXNE) != RESET) {
-    USART_ClearITPendingBit(USART3, USART_IT_RXNE);
-    //while (!USART_GetFlagStatus(USART1, USART_FLAG_TXE));
-    //USART_SendData(USART1, chit);
-  }
 }
 
 void led_on(int time) {
@@ -207,14 +202,10 @@ void TIM2_IRQHandler(void) {
 }
 
 void EXTI15_10_IRQHandler(void) {
-	//play_music(1);
 	if (EXTI_GetITStatus(EXTI_Line11) != RESET) {
 		if((~((GPIO_TypeDef *)BTN_PORT)->IDR) & (BTN_PIN_NUMBER)) {
 		}
 		else {
-			GPIO_SetBits(GPIOD,GPIO_Pin_3);
-				delay(10000);
-				GPIO_ResetBits(GPIOD,GPIO_Pin_3);
 			if(led_state == 2) {
 				warningFlag = 1;		
 				GPIO_SetBits(GPIOD,GPIO_Pin_2);
@@ -226,6 +217,13 @@ void EXTI15_10_IRQHandler(void) {
 	}
 }
 
+void USART3_IRQHandler(void) {
+  if (USART_GetITStatus(USART3, USART_IT_RXNE) != RESET) {
+    USART_ClearITPendingBit(USART3, USART_IT_RXNE);
+    chit = USART_ReceiveData(USART3);
+  }
+}
+
 int main(void) {
 	int i=0;
 	SystemInit();
@@ -233,7 +231,7 @@ int main(void) {
 	GPIO_configure();
 	EXTI11_configure();
 	TIM2_configure();
-	//USART_configure();
+	USART_configure();
 	for(i=0; i<3; i++) {
 		if(LED_PORT[i] != 0)
 			(((GPIO_TypeDef *)LED_PORT[i])->BRR) |= LED_PIN_NUMBER[i];
@@ -259,7 +257,7 @@ int main(void) {
 		
 		if(warningFlag) {
 			warningFlag = 0;
-			//send_alert();
+			send_alert();
 		}
 
 	}
