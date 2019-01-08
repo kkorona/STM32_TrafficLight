@@ -238,7 +238,7 @@ int main(void) {
 		delay(10);
 		(((GPIO_TypeDef *)LED_PORT[i])->BRR) = 0;
 	}
-	/*
+	
 	DFPlayer_Cmd[3] = (char)0x06;
   	DFPlayer_Cmd[4] = (char)0x00;
  	 DFPlayer_Cmd[5] = (char)0x00;
@@ -246,7 +246,7 @@ int main(void) {
   	DFPlayer_Cmd[7] = (char)0xFE;
  	 DFPlayer_Cmd[8] = (char)0xF6;
 	SendStr(USART3,DFPlayer_Cmd,10);
-	*/
+	
 
 	while(1) {
 
